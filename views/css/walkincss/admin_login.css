@@ -1,0 +1,51 @@
+.content_for_login{
+    width: 40%;
+    height: 55vh;
+    background-color: #ffffff;
+    padding: 100px;
+}
+.input_field{
+    margin-top: 20px;
+}
+input::placeholder {
+    color: rgba(51, 51, 51, 0.60); 
+    font-size: 12px;
+}
+input{
+    margin-top: 10px;
+    width: 90%;
+    height: 42px;
+    border:1px solid #CED4DA;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input:focus {
+    outline: none;
+}
+.button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.login_button{
+    width: 124px;
+    height: 37px;
+    background-color: #00A7E3;
+    color: #ffffff;
+    border-radius: 22px;
+    border: none;
+}
+.welcome_title{
+    margin-bottom: 50px;
+    font-size: 21px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+.topic{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 0.75)
+}

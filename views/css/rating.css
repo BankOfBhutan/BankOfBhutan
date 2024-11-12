@@ -1,0 +1,77 @@
+.star1 {
+    font-size: 5vh;
+    cursor: pointer;
+}
+
+.one {
+    color: rgb(255, 0, 0);
+}
+
+.two {
+    color: rgb(255, 106, 0);
+}
+
+.three {
+    color: rgb(251, 255, 120);
+}
+
+.four {
+    color: rgb(255, 255, 0);
+}
+
+.five {
+    color: rgb(24, 159, 14);
+}
+.btn-close{
+    background-color: transparent !important;
+}
+.btns{
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    width: 25%;
+    outline: none !important;
+    height: 42px;
+    border-radius: 3px;
+}
+.btn-submit{
+    background-color: #00A7E3 !important;
+    color: #ffffff !important;
+    border: none;
+}
+.btn-prev {
+    background-color: #ff6347 !important;
+    color: white;
+    border: none;
+  }
+  .fot{
+    background-color: #00A7E3 !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    border: none;
+    border-radius: 3px !important;
+    width: 25%;
+    height: 42px;
+  }
+  .btn-next {
+    background-color: #4682b4 !important;
+    color: white;
+    border: none;
+  }
+  .btn-prev:hover, .btn-next:hover,.btn-submit:hover {
+    opacity: 0.8; 
+  }
+  .input_field_for_the_btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .input_field_for_the_btn1{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; 
+  }
+  .hidden {
+    display: none;
+  }

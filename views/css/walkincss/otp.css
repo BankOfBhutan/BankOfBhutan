@@ -1,0 +1,366 @@
+/* Apply Open Sans font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+    margin: 0; /* Remove margin from the body */
+    padding: 0; /* Ensure no extra padding */
+}
+
+/* Blue background for the body */
+.blue-background {
+    background-color: #00A7E3; /* Apply blue background to the body */
+    min-height: 100vh; /* Ensure the background covers the entire viewport */
+    display: flex; /* Use Flexbox to align items */
+    flex-direction: column; /* Flex direction for optional header/footer positioning */
+}
+
+/* Custom styles to adjust form and image sizes */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Header section */
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0; /* Ensure no padding at the top */
+    margin: 0; /* Remove margin */
+    background-color: white;
+}
+
+/* Form and image containers */
+.form-container,
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the left */
+    height: 100%;
+}
+
+.row-full-height {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.image-container {
+    padding-top: 20px; /* Adjust this value to align the image with buttons */
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Adjust the value to control the roundness */
+}
+
+.border-flat {
+    border: 1px solid #00A7E3 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    padding-bottom: 50px !important;
+    width: 100% !important;
+    margin: 50px auto 0 auto !important;
+    background-color: white; /* Ensure form container stays white */
+}
+
+/* Header text with updated color and weight */
+.header-container h2 {
+    font-weight: 600;
+   color: #4d4d4d !important;
+    margin: 0; /* Remove any margin from header text */
+    font-size: 24px;
+}
+
+/* Form heading with updated color and weight */
+.form-container h3 {
+    font-weight: 600;
+    color: #4d4d4d; /* Set form heading color to 70% black */
+}
+
+/* Ensure the body takes up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Footer customization */
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0; /* Reduced padding to remove extra space */
+    position: sticky;
+    bottom: 0;
+    margin-top: auto; /* Ensure footer sticks to the bottom */
+    position: fixed;
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: transparent; /* Make the background transparent */
+    border-color: #00A7E3; /* Update the border color */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(51, 51, 51, 0.75); /* Ensure the text color is dark for readability */
+}
+
+.btn-primary:hover {
+    background-color: #00A7E3;
+    border-color: #00A7E3;
+    color: black !important; /* Change text color to black on hover */
+}
+
+.btn-primary:active {
+    background-color: rgba(6, 147, 227, 1) !important; /* Reset background color */
+    border-color: rgba(6, 147, 227, 1) !important; /* Reset border color */
+    color: rgba(51, 51, 51, 0.75); /* Reset text color to the original */
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .form-container {
+        padding-top: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .border-flat {
+        margin-top: 20px;
+    }
+
+    .image-container {
+        width: 100%;
+        padding-top: 20px;
+    }
+}
+
+/* OTP form container styling */
+.otp-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #13A4DD;
+    border-radius: 15px; /* Make the container corners more rounded */
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Add shadow for an elevated look */
+    position: relative; /* For placing the close (X) button */
+}
+
+/* Close (X) button */
+.otp-container .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* OTP input styling */
+.otp-input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 5px;
+    border: 1px solid #13A4DD;
+    border-radius: 5px;
+}
+
+.otp-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Verify button */
+.verify-btn {
+    width: 120px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #13A4DD;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+}
+
+.verify-btn:hover {
+    background-color: #13A4DD;
+}
+
+/* Resend link */
+.resend-link {
+    color: #13A4DD;
+    text-decoration: none;
+}
+
+.resend-link:hover {
+    text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .otp-container {
+        padding: 20px;
+    }
+
+    .otp-input {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .verify-btn {
+        width: 100px;
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+/* Footer customization */
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto; /* Ensure footer sticks to the bottom */
+    position: fixed;
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 576px) {
+    .header-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        width: 25px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+    }
+
+    .border-flat {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 25em) {
+    .header-container h2,h3,h6,p {
+        font-size: 12px;
+        
+    }
+    .form-control {
+        margin-bottom: 10px !important; /* Reduce space between form inputs */
+    }
+   
+
+    .form-control {
+        margin-bottom: 50px !important; /* Reduce space between form inputs */
+    }
+    
+ 
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    .logo {
+        width: 60px; /* Adjust this size as needed */
+    }
+
+    .form-control {
+        padding: 5px;
+    }
+    #userEmail::placeholder {
+        color: #777; 
+        font-size: 12px; 
+    }
+    .email-icon {
+        width: 50px;
+    }
+
+    .footer-custom {
+        position: fixed;
+    }
+    .footer-custom p {
+        font-size: 12px;
+    }
+    
+    .custom-button {
+        background-color: #00A7E3; /* Custom blue background */
+        color: white; /* White text */
+        font-size: 12px !important; /* Font size */
+        padding: 10px 20px; /* Padding */
+        border-radius: 5px; /* Slightly rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+    
+    .custom-button:hover {
+        background-color: #008bb5; /* Darker blue on hover */
+    }
+
+    .email-container {
+        margin: 0 auto; /* Remove any top margin to bring it closer to the header */
+        height: auto;
+    }
+    .d-flex label {
+        font-size: 12px;
+    }
+}

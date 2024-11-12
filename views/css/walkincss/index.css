@@ -1,0 +1,241 @@
+/* Apply Open Sans font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+    margin: 0; /* Remove margin from the body */
+    padding: 0; /* Ensure no extra padding */
+    font-weight: 600;
+   
+}
+
+/* Blue background for the body */
+.blue-background {
+    background-color: #00A7E3; /* Apply blue background to the body */
+    padding-bottom: 0; /* Remove padding from bottom to fix footer space */
+    min-height: 100vh; /* Ensure the background covers the entire viewport */
+    display: flex;
+    flex-direction: column; /* Allow flex behavior for header and footer positioning */
+}
+
+/* Custom styles to adjust form and image sizes */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Header section */
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0; /* Ensure no padding at the top */
+    margin: 0; /* Remove margin */
+    background-color: white;
+}
+
+/* Form and image containers */
+.form-container,
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the left */
+    height: 100%;
+}
+
+.row-full-height {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.image-container {
+    padding-top: 20px; /* Adjust this value to align the image with buttons */
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Adjust the value to control the roundness */
+}
+
+.border-flat {
+    border: 1px solid #00A7E3 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    padding-bottom: 50px !important;
+    width: 100% !important;
+    margin: 50px auto 0 auto !important;
+    background-color: white; /* Ensure form container stays white */
+}
+
+/* Header text with updated color and weight */
+.header-container h2 {
+
+    color: #4d4d4d;
+    margin: 0;
+    font-size: 24px;
+}
+/* Form heading with updated color and weight */
+.form-container h3 {
+    font-weight: 600;
+    font-size: 25px;
+    color: rgba(51, 51, 51, 0.75); /* Set form heading color to 70% black */
+}
+
+/* Ensure the body takes up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+
+.container {
+    flex: 1;
+}
+
+/* Footer customization */
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0; /* Reduced padding to remove extra space */
+   
+    bottom: 0;
+    margin-top: auto; /* Ensure footer sticks to the bottom */
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-main {
+    background-color: transparent; /* Make the background transparent */
+    border-color: rgba(0, 167, 227, 0.5); /* Update the border color */
+    box-shadow: 0 4px 5px rgba(175, 175, 176, 0.3);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(51, 51, 51, 0.75); /* Ensure the text color is dark for readability */
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+.btn-main:hover {
+    background-color: #00A7E3 ; /* Ensure hover background color works */
+    border-color: #00A7E3 ; /* Ensure hover border color works */
+    color: white ; /* Ensure hover text color changes to black */
+    
+}
+
+.btn-main:active {
+    background-color: #00A7E3 ; /* Ensure hover background color works */
+    border-color: #00A7E3 ; /* Ensure hover border color works */
+    color: rgba(51, 51, 51, 0.75); /* Reset text color to the original */
+}
+
+@media (max-width: 48em) {
+    .header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .header-container h2 {
+        font-size: 18px;
+    }
+
+    .border-flat {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 16px;
+    }
+
+    .btn-main {
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 36em) {
+    .header-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        width: 25px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+    }
+
+    .border-flat {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 14px;
+    }
+
+    .btn-main {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 25em) {
+    .header-container h2 {
+        font-size: 12px;
+        
+    }
+
+    .btn-main {
+        height: 40px;
+        font-size: 0.75rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+
+    .logo {
+        width: 60px; 
+    }
+    .footer-custom p {
+        font-size: 12px;
+    }
+    .form-container h3, 
+    .form-container p {
+        font-size: 12px;
+    }
+    
+    
+}

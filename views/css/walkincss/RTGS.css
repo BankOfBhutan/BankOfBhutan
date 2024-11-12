@@ -1,0 +1,623 @@
+/* Apply Open Sans font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+/* Blue background for the body */
+.blue-background {
+    background-color: #00A7E3;
+    padding-bottom: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom styles to adjust form and logo sizes */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Header section */
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.border-flat {
+    border: 1px solid #00A7E3 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    padding: 30px;
+    width: 100%;
+    margin: 50px auto;
+    background-color: white;
+}
+
+.header-container h2 {
+    font-weight: 600;
+    color: #4d4d4d;
+    margin: 0;
+    font-size: 24px;
+}
+
+.topic {
+    font-weight: 600;
+    font-size: 25px;
+    color: rgba(51, 51, 51, 0.75); 
+}
+
+.text-start  {
+    font-weight: 600;
+}
+p{
+   
+    font-weight: 600;
+}
+
+
+
+.form-container p {
+    margin-bottom: 1.5rem;
+}
+
+.form-container h5 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Footer customization */
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: transparent;
+    border-color: #00A7E3;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.btn-primary:hover {
+    background-color: #00A7E3;
+    border-color: #00A7E3;
+    color: black !important;
+}
+
+.btn-primary:active {
+    background-color: rgba(6, 147, 227, 1) !important;
+    border-color: rgba(6, 147, 227, 1) !important;
+    color: #333333;
+}
+
+/* Style the close button */
+.btn-close {
+    filter: invert(36%) sepia(89%) saturate(5349%) hue-rotate(356deg) brightness(103%) contrast(110%);
+    opacity: 1;
+}
+
+/* Remove focus outline */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Form field styling */
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* Label styling */
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color:  rgba(51, 51, 51, 0.75); /* Darker label color */
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(51, 51, 51, 0.75); /* Darker border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.form-group input::placeholder {
+    font-size: 14px;
+   
+    color: rgba(51, 51, 51, 0.5); /* Optional: change color for better visibility */
+}
+
+
+/* Focus effect for input fields */
+.form-group input:focus {
+    border-color: #000000; /* Darker border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Section Titles */
+h6 {
+    font-weight: 600;
+    color: #4d4d4d;
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #00A7E3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Changed from 50% to auto to make it smaller */
+    min-width: 150px; /* Set a minimum width for the button */
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Hover effect */
+.submit-btn:hover {
+    background-color: #E2E6EA;
+}
+
+/* Horizontal rule customization */
+.custom-hr {
+    width: 100%;
+    border: 1px solid #00A7E3;
+    margin-left: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1200px) {
+    .header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .header-container h2 {
+        font-size: 22px;
+    }
+
+    .border-flat {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .logo {
+        width: 35px;
+    }
+
+    .header-container h2 {
+        font-size: 20px;
+    }
+
+    .border-flat {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .ref-line {
+        width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .header-container h2 {
+        font-size: 18px;
+    }
+
+    .border-flat {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive radio buttons */
+    .d-flex.flex-wrap.gap-3 label {
+        display: flex;
+        flex-basis: 50%;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        width: 25px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+    }
+
+    .border-flat {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+
+    .d-flex.flex-wrap.gap-3 label {
+        flex-basis: 100%;
+    }
+
+    /* Ensure ref line and label align on mobile */
+    .ref-line {
+        width: 100px;
+    }
+
+    .col-md-6.text-end.d-flex {
+        justify-content: flex-start;
+    }
+}
+
+
+
+/* Custom styles for Bank Application Ref. No. line */
+.ref-line {
+    display: inline-block;
+    width: 200px; /* Adjust the width of the line */
+    height: 1px; /* Line thickness */
+    border-bottom: 1px solid #333333; /* Darker line color */
+}
+
+.row.mb-3.align-items-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label.form-label {
+    white-space: nowrap; /* Ensure the label text stays on one line */
+}
+
+.col-md-6.text-end.d-flex {
+    justify-content: flex-end; /* Ensure the line and label align on the same line */
+    align-items: center;
+}
+
+/* Adjust responsiveness */
+@media (max-width: 992px) {
+    .ref-line {
+        width: 150px; /* Adjust the line width for smaller screens */
+    }
+}
+
+/* Hide the default radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Custom radio button style */
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    margin-right: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Create the custom circle */
+.radio-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(51, 51, 51, 0.75); /* Grey border for the circle */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Show the checkmark when the radio button is selected */
+input[type="radio"]:checked + .radio-label::before {
+    content: '✔'; /* Checkmark character */
+    color: rgba(51, 51, 51, 0.75);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Background remains white */
+    border-color: rgba(51, 51, 51, 0.75); /* Keep the grey border */
+}
+
+
+
+/* Darker label for Bank Application Ref.No */
+.bank-ref-label {
+    color: #333333; /* Darker color */
+    font-weight: 600; /* Make the label bold */
+}
+/* General form label styling */
+.form-label {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+/* Ensure input fields have a darker border and focus styling */
+.form-control {
+    border: 1px solid #333333; /* Darker border color */
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #000000; /* Darker border on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+/* Layout styling for radio buttons and input field */
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gap-3 {
+    gap: 10px;
+}
+
+/* Custom declaration input field size */
+#declarationNo {
+    width: 100%; /* Adjust the width */
+}
+
+
+/* General styling for the reference line */
+.ref-line {
+    display: inline-block;
+    width: 150px; /* Adjust the width for the line */
+    height: 1px;
+    border-bottom: 1px solid #333333; /* Darker line color */
+}
+
+/* Styling for the Bank Application Ref. No label */
+.bank-ref-label {
+    font-weight: 600;
+    color: #333333; /* Darker label color */
+    white-space: nowrap; /* Prevents label from wrapping */
+}
+
+/* Container for label and line */
+.ref-container {
+    display: flex;
+    justify-content: flex-start; /* Align to the left of the screen */
+    align-items: center;
+}
+
+/* Mobile adjustments (optional) */
+@media (max-width: 768px) {
+    .ref-line {
+        width: 100%; /* Ensure the line takes up space on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .ref-line {
+        width: 100%; /* Full width for smaller devices */
+    }
+}
+
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+@media (max-width: 25em) {
+    .header-container h2,h6,p {
+        font-size: 12px;
+        
+    }
+  
+
+    .logo {
+        width: 60px; /* Adjust this size as needed */
+    }
+
+   
+    #userEmail::placeholder {
+        color: #777; 
+        font-size: 12px; 
+    }
+    .email-icon {
+        width: 50px;
+    }
+
+    .footer-custom p {
+        font-size: 12px;
+    }
+    
+    .custom-button {
+        background-color: #00A7E3; /* Custom blue background */
+        color: white; /* White text */
+        font-size: 12px !important; /* Font size */
+        padding: 10px 20px; /* Padding */
+        border-radius: 5px; /* Slightly rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+    
+    .custom-button:hover {
+        background-color: #008bb5; /* Darker blue on hover */
+    }
+
+    /* Label styling */
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(51, 51, 51, 0.75); /* Darker label color */
+    font-size: 12px;
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(51, 51, 51, 0.75);; /* Darker border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-size: 12px;
+
+}
+
+.form-group input::placeholder {
+    font-size: 14px;
+   
+    color: rgba(51, 51, 51, 0.5); /* Optional: change color for better visibility */
+}
+.text-start  {
+    font-size: 12px;
+    font-weight: 600;
+}
+p{
+   
+    font-weight: 600;
+    font-size: 12px;
+}
+.submit-btn {
+    background-color: #00A7E3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Keep this as auto to avoid width constraint */
+    padding: 12px 12px; /* Adjust the padding to make the button smaller */
+    font-weight: 600;
+    font-size: 12px; /* Reduce font size */
+    text-align: center;
+}
+
+.btn-primary {
+    height: 40px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.bank-ref-label {
+    font-weight: 600;
+    color: #333333; /* Darker label color */
+    white-space: nowrap; /* Prevents label from wrapping */
+    font-size: 12px;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #555;
+}
+}

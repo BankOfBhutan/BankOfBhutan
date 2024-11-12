@@ -1,0 +1,259 @@
+/* Apply Open Sans font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+    margin: 0; /* Remove margin from the body */
+    padding: 0; /* Ensure no extra padding */
+}
+
+/* Blue background for the body */
+.blue-background {
+    background-color: #00A7E3; /* Apply blue background to the body */
+    padding-bottom: 0; /* Remove padding from bottom to fix footer space */
+    min-height: 100vh; /* Ensure the background covers the entire viewport */
+    display: flex;
+    flex-direction: column; /* Allow flex behavior for header and footer positioning */
+}
+
+/* Custom styles to adjust form and image sizes */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Header section */
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    margin: 0; /* Remove margin */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensure logo and text are aligned */
+}
+
+.header-container .col-auto {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Header text with updated color and weight */
+.header-container h2 {
+    font-weight: 600;
+    color: #4d4d4d; /* Set header color to 70% black */
+    margin: 0; /* Remove any margin from header text */
+    font-size: 24px;
+}
+
+/* Make header responsive */
+@media (max-width: 992px) {
+    .header-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .header-container h2 {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: space-between;
+    }
+
+    .header-container h2 {
+        font-size: 18px;
+        text-align: center; /* Center the header text */
+    }
+
+    .logo {
+        width: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        flex-direction: column; /* Stack logo and text vertically */
+        align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .logo {
+        width: 30px;
+    }
+}
+
+/* Footer customization */
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0; /* Reduced padding to remove extra space */
+    position: fixed;
+    bottom: 0;
+    margin-top: auto; /* Ensure footer sticks to the bottom */
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: transparent; /* Make the background transparent */
+    border-color: #00A7E3; /* Update the border color */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(51, 51, 51, 0.75); /* Ensure the text color is dark for readability */
+}
+
+.btn-primary:hover {
+    background-color: #00A7E3;
+    border-color: #00A7E3;
+    color: black !important; /* Change text color to black on hover */
+}
+
+.btn-primary:active {
+    background-color: rgba(6, 147, 227, 1) !important; /* Reset background color */
+    border-color: rgba(6, 147, 227, 1) !important; /* Reset border color */
+    color: rgba(51, 51, 51, 0.75); /* Reset text color to the original */
+}
+
+/* Style the close button to make it red */
+.btn-close {
+    filter: invert(36%) sepia(89%) saturate(5349%) hue-rotate(356deg) brightness(103%) contrast(110%);
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 10;
+}
+
+/* Remove focus outline */
+.btn-close:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: none; /* Remove any default box-shadow */
+}
+
+/* Image container and image styling */
+.image-container {
+    max-width: 100%;  /* Ensure the container does not overflow */
+    padding-left: 20px; /* Add space between the image and the form */
+    padding-right: 20px; /* Add space between the image and the close button */
+    padding-top: 10px; /* Top padding to keep space from close button */
+}
+
+.image-container img {
+    max-width: 90%; /* Image size at 90% of container's width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Keep the border radius */
+}
+
+/* Responsive Design: Stack form and image vertically on smaller screens */
+@media (max-width: 768px) {
+    .border-flat {
+        flex-direction: column; /* Stack form and image vertically */
+        align-items: center;
+    }
+
+    .image-container img {
+        max-width: 80%; /* Make image smaller on mobile */
+        height: auto;
+    }
+
+    .btn-close {
+        top: 20px; /* Adjust the button's top position for mobile */
+        right: 10px; /* Reduce space from right on small screens */
+    }
+}
+
+/* Specific for very small mobile screens */
+@media (max-width: 576px) {
+    .image-container img {
+        max-width: 100%; /* Image takes full width of the container */
+        height: auto;
+    }
+}
+
+/* Form container styling */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+}
+
+/* Style for radio buttons and labels */
+label {
+    font-weight: 400;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Bordered flat container */
+.border-flat {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Adjust the footer link color */
+.footer-custom a {
+    color: #00A7E3;
+}
+
+/* Spacing and layout adjustments */
+.d-flex {
+    gap: 15px;
+}
+
+/* Adjusted padding for footer links */
+.footer-custom a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 576px) {
+    .footer-custom a {
+        display: block;
+        padding-top: 10px;
+    }
+}

@@ -1,0 +1,406 @@
+/* Apply Open Sans font */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+    margin: 0; /* Remove margin from the body */
+    padding: 0; /* Ensure no extra padding */
+    font-weight: 600; 
+}
+
+/* Blue background for the body */
+.blue-background {
+    background-color: #00A7E3; /* Apply blue background to the body */
+    padding-bottom: 0;
+    min-height: 100vh; /* Ensure the background covers the entire viewport */
+    display: flex;
+    flex-direction: column; /* Allow flex behavior for header and footer positioning */
+}
+
+/* Custom styles to adjust form and logo sizes */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+
+/* Header section */
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.border-flat {
+    border: 1px solid #00A7E3 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    padding: 30px;
+    width: 100%;
+    margin: 50px auto;
+    background-color: white;
+}
+
+.header-container h2 {
+    font-weight: 600;
+    color: #4d4d4d;
+    margin: 0;
+    font-size: 24px;
+}
+.topic {
+    font-weight: 600;
+    font-size: 25px;
+    color: rgba(51, 51, 51, 0.75); 
+}
+
+.text-start  {
+    font-weight: 600;
+}
+p{
+   
+    font-weight: 600;
+}
+
+
+
+.form-container p {
+    margin-bottom: 1.5rem;
+}
+
+.form-container h5 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Footer customization */
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: auto !important;
+
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: transparent;
+    border-color: #00A7E3;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(51, 51, 51, 0.75);;
+}
+
+.btn-primary:hover {
+    background-color: #00A7E3;
+    border-color: #00A7E3;
+    color: black !important;
+}
+
+.btn-primary:active {
+    background-color: rgba(6, 147, 227, 1) !important;
+    border-color: rgba(6, 147, 227, 1) !important;
+    color: rgba(51, 51, 51, 0.75);;
+}
+
+/* Style the close button */
+.btn-close {
+    filter: invert(36%) sepia(89%) saturate(5349%) hue-rotate(356deg) brightness(103%) contrast(110%);
+    opacity: 1;
+}
+
+/* Remove focus outline */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Form field styling */
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* Label styling */
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(51, 51, 51, 0.75); /* Darker label color */
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(51, 51, 51, 0.75);; /* Darker border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+
+}
+
+.form-group input::placeholder {
+    font-size: 14px;
+   
+    color: rgba(51, 51, 51, 0.5); /* Optional: change color for better visibility */
+}
+
+
+/* Focus effect for input fields */
+.form-group input:focus {
+    border-color: #000000; /* Darker border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Section Titles */
+h6 {
+    font-weight: 600;
+    color: #4d4d4d;
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #00A7E3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Changed from 50% to auto to make it smaller */
+    min-width: 150px; /* Set a minimum width for the button */
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Hover effect */
+.submit-btn:hover {
+    background-color: #E2E6EA;
+}
+
+/* Horizontal rule customization */
+.custom-hr {
+    width: 100%;
+    border: 1px solid #00A7E3;
+    margin-left: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Input Field Styling */
+input.form-control {
+     /* Blue border by default */
+    border-radius: 5px; /* Rounded corners */
+    outline: none !important; /* Remove the default focus outline */
+    padding: 8px; /* Add padding for better appearance */
+}
+
+/* Focus State Styling for Input Fields */
+input.form-control:focus {
+    border-color: #00A7E3 !important; /* Blue border on focus */
+    box-shadow: none !important; /* Remove Bootstrap's shadow on focus */
+    outline: none !important; /* Ensure no outline is shown */
+}
+
+
+
+/* Form and image containers */
+.form-container,
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 1200px) {
+    .header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .header-container h2 {
+        font-size: 22px;
+    }
+
+    .border-flat {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .logo {
+        width: 35px;
+    }
+
+    .header-container h2 {
+        font-size: 20px;
+    }
+
+    .border-flat {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .header-container h2 {
+        font-size: 18px;
+    }
+
+    .border-flat {
+        padding: 15px;
+    }
+
+    .btn-primary {
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        width: 25px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+    }
+
+    .border-flat {
+        padding: 10px;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+@media (max-width: 25em) {
+    .header-container h2,h6,p {
+        font-size: 12px;
+        
+    }
+  
+
+    .logo {
+        width: 60px; /* Adjust this size as needed */
+    }
+
+   
+    #userEmail::placeholder {
+        color: #777; 
+        font-size: 12px; 
+    }
+    .email-icon {
+        width: 50px;
+    }
+
+    .footer-custom p {
+        font-size: 12px;
+    }
+    
+    .custom-button {
+        background-color: #00A7E3; /* Custom blue background */
+        color: white; /* White text */
+        font-size: 12px !important; /* Font size */
+        padding: 10px 20px; /* Padding */
+        border-radius: 5px; /* Slightly rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+    
+    .custom-button:hover {
+        background-color: #008bb5; /* Darker blue on hover */
+    }
+
+    /* Label styling */
+.form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(51, 51, 51, 0.75); /* Darker label color */
+    font-size: 12px;
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(51, 51, 51, 0.75);; /* Darker border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-size: 12px;
+
+}
+
+.form-group input::placeholder {
+    font-size: 14px;
+   
+    color: rgba(51, 51, 51, 0.5); /* Optional: change color for better visibility */
+}
+}

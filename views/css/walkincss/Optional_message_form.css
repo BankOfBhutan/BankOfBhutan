@@ -1,0 +1,389 @@
+/* Base Styles and existing Media Queries */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+    margin: 0;
+    padding: 0;
+}
+
+.blue-background {
+    background-color: #00A7E3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0;
+    margin: 0;
+    background-color: white;
+    width: 100%;
+}
+
+.border-flat {
+    border: 1px solid #00A7E3 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    padding-bottom: 50px !important;
+    width: 100%;
+    margin: 50px auto 0 auto !important;
+    background-color: white;
+}
+.header-container h2 {
+    font-weight: 600;
+    color: #4d4d4d; /* Set header color to 70% black */
+    margin: 0; /* Remove any margin from header text */
+    font-size: 24px;
+}
+
+.form-container h3 {
+    font-weight: 600;
+    color: rgba(51, 51, 51, 0.75);
+    font-size: 20px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    flex: 1;
+}
+
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .form-container {
+        padding-top: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .border-flat {
+        margin-top: 20px;
+    }
+
+    .image-container {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .email-container {
+        max-width: 90%;
+        padding: 30px;
+    }
+}
+
+.email-container {
+    text-align: center;
+    border-radius: 15px;
+    padding: 70px;
+    background-color: white;
+    margin: auto;
+    height: auto;
+    border-color: #00A7E3 !important;
+    border-width: 2px !important;
+}
+
+.email-icon {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-color: #00A7E3 !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    outline: none !important;
+    border-color: #00A7E3 !important;
+    box-shadow: 0 0 5px rgba(0, 167, 227, 0.5) !important;
+}
+
+/* Media Queries for Specific Resolutions */
+
+/* 1280x720 */
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+    .header-container h2 {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .email-icon {
+        width: 250px;
+    }
+
+    .form-control {
+        width: 70%;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+    }
+}
+
+/* 800x1422 */
+@media screen and (max-width: 800px) and (max-height: 1422px) {
+    .header-container h2 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .email-icon {
+        width: 220px;
+    }
+
+    .form-control {
+        width: 75%;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
+
+/* 1024x1366 */
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+    .header-container h2 {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 55px;
+    }
+
+    .email-icon {
+        width: 270px;
+    }
+
+    .form-control {
+        width: 65%;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+    }
+}
+
+
+
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-skip, .btn-continue {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color:rgba(51, 51, 51, 0.75);
+}
+
+.btn-skip {
+    background-color: transparent;
+    border: 2px solid #00A7E3;
+    color: #00A7E3;
+}
+
+.btn-skip:hover {
+    background-color: #00A7E3;
+    color: white;
+}
+
+.btn-continue {
+    background-color: #00A7E3;
+    color: white;
+    border: none;
+}
+
+.btn-continue:hover {
+    background-color: #008dc7;
+    color: white;
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: nowrap; /* Prevents wrapping on smaller screens */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .button-group {
+        justify-content: space-around; /* Keeps the buttons aligned in one line */
+    }
+
+    .btn-skip, .btn-continue {
+        width: 120px; /* Adjust width slightly for mobile but no stacking */
+    }
+}
+
+/* Center align text and buttons */
+.email-container h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px; /* Reduced font size */
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(51, 51, 51, 0.75);
+}
+
+.email-icon {
+    display: block;
+    margin: 0 auto;
+}
+@media (max-width: 576px) {
+    .header-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        width: 25px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+    }
+
+    .border-flat {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .header-container h2 {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        height: 40px;
+        font-size: 0.75rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+}
+/* Base Styles */
+.email-icon {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* 1280x720 */
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+    .email-icon {
+        width: 250px;  /* Reduced size */
+    }
+}
+
+/* 1024x1366 */
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+    .email-icon {
+        width: 220px;  /* Further reduced size */
+    }
+}
+
+/* 800x1422 */
+@media screen and (max-width: 800px) and (max-height: 1422px) {
+    .email-icon {
+        width: 180px;  /* Further reduced size */
+    }
+}
+
+/* For small mobile phones (width <= 768px) */
+@media (max-width: 768px) {
+    .email-icon {
+        width: 150px;  /* Adjusted to fit smaller screens */
+    }
+}
+
+/* For extra small phones (width <= 576px) */
+@media (max-width: 576px) {
+    .email-icon {
+        width: 120px;  /* Reduced size for small mobile phones */
+    }
+}
+
+/* For even smaller devices like iPhone SE (width <= 400px) */
+@media (max-width: 400px) {
+    .email-icon {
+        width: 100px;  /* Further reduced size for the smallest screens */
+    }
+}

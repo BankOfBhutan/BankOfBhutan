@@ -1,0 +1,19 @@
+@media (max-width: 835px) {
+    .content{
+        width: 90%;
+    }
+    .navigation_container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .option {
+        width: 96%; /* Make sure the options take up full width */
+        flex: 1 1 100%; /* Ensure flexbox gives it full width */
+        margin-bottom: 10px; /* Add space between stacked items */
+    }
+}
+  @media (min-height: 400px) {
+    .content {
+        height: 90vh;
+    }
+  }

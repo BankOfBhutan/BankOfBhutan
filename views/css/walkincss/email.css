@@ -1,0 +1,422 @@
+/* Base Styles and existing Media Queries */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color:rgba(51, 51, 51, 0.75);
+    margin: 0;
+    padding: 0;
+}
+
+.blue-background {
+    background-color: #00A7E3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+
+/* .header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0;
+    margin: 0;
+    background-color: white;
+    width: 100%;
+} */
+.header-container {
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 0;
+    margin-bottom: 10px; /* Reduce margin to bring sections closer */
+    background-color: white;
+    width: 100%;
+}
+
+
+
+.form-container,
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.row-full-height {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.image-container {
+    padding-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.border-flat {
+    border: 1px solid #00A7E3 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    padding-bottom: 50px !important;
+    width: 100%;
+    margin: 50px auto 0 auto !important;
+    background-color: white;
+}
+
+.header-container h2 {
+    font-weight: 600;
+    color: #4d4d4d;
+    margin: 0;
+    font-size: 24px;
+}
+
+.form-container h3 {
+    font-weight: 600;
+    color: #4d4d4d;
+    font-size: 20px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    flex: 1;
+}
+
+.footer-custom {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.footer-custom a {
+    color: #00A7E3;
+    text-decoration: none;
+}
+
+.footer-custom a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: #00A7E3;
+    border-color: #00A7E3;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+.btn-primary:hover {
+    background-color: #008dc7;
+    border-color: #008dc7;
+    color: black !important;
+}
+
+.btn-primary:active {
+    background-color: rgba(6, 147, 227, 1) !important;
+    border-color: rgba(6, 147, 227, 1) !important;
+    color: rgba(51, 51, 51, 0.75);
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .form-container {
+        padding-top: 20px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .border-flat {
+        margin-top: 20px;
+    }
+
+    .image-container {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .email-container {
+        text-align: center;
+        border-radius: 15px;
+        padding: 70px;
+        background-color: white;
+        margin: 0 auto; /* Remove any top margin to bring it closer to the header */
+        height: auto;
+        border-color: #00A7E3 !important;
+        border-width: 2px !important;
+    }
+}
+
+.email-container {
+    text-align: center;
+    border-radius: 15px;
+    padding: 70px;
+    background-color: white;
+    margin: auto;
+    height: auto;
+    border-color: #00A7E3 !important;
+    border-width: 2px !important;
+}
+
+.email-icon {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-color: #00A7E3 !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    outline: none !important;
+    border-color: #00A7E3 !important;
+    box-shadow: 0 0 5px rgba(0, 167, 227, 0.5) !important;
+}
+
+/* Media Queries for Specific Resolutions */
+
+/* 1280x720 */
+@media screen and (max-width: 1280px) {
+    .header-container h2 {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .email-icon {
+        width: 200px;
+    }
+
+    .form-control {
+        width: 70%;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+    }
+}
+
+/* 800x1422 */
+@media screen and (max-width: 800px) and (max-height: 1422px) {
+    .header-container h2 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .email-icon {
+        width: 220px;
+    }
+
+    .form-control {
+        width: 75%;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
+
+/* 1024x1366 */
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+    .header-container h2 {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 55px;
+    }
+
+    .email-icon {
+        width: 270px;
+    }
+
+    .form-control {
+        width: 65%;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .logo {
+        width: 25px;
+    }
+
+    .header-container h2 {
+        font-size: 16px;
+    }
+
+    .border-flat {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+
+    .form-container h3, .form-container h5 {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* For small mobile phones (width <= 768px) */
+@media (max-width: 768px) {
+    .header-container h2, 
+    .footer-custom p,
+    .btn-primary, 
+    .form-control,
+    h4 {
+        font-size: 17px;  /* Adjusted font size for h2, footer text, buttons, form inputs, and h4 */
+    }
+    .btn-primary {
+        font-size: 14px;  /* Decreased the button's font size */
+        padding: 8px 16px;  /* Adjusted padding for the button for a better fit */
+    }
+
+    .email-container {
+        padding: 35px 15px;  /* Slightly reduced padding */
+    }
+
+    .email-icon {
+        width: 130px;  /* Reduced size of the email icon */
+    }
+
+    /* Ensure the input field is longer and occupies full width */
+    .form-control {
+        width: 100%;  /* Ensure form-control takes up 100% of the container width */
+        max-width: none; /* Override any max-width limitations */
+    }
+
+    #userEmail {
+        width: 100% !important;  /* Make input field longer, taking 100% of the available width */
+        margin: 0 auto;
+    }
+
+    /* Specific reduction in margin for mobile */
+    .mb-4 {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 25em) {
+    .header-container h2,h6,p {
+        font-size: 12px;
+        
+    }
+    .form-control {
+        margin-bottom: 10px !important; /* Reduce space between form inputs */
+    }
+   
+
+    .form-control {
+        margin-bottom: 50px !important; /* Reduce space between form inputs */
+    }
+    
+ 
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    .logo {
+        width: 60px; /* Adjust this size as needed */
+    }
+
+    .form-control {
+        padding: 5px;
+    }
+    #userEmail::placeholder {
+        color: #777; 
+        font-size: 12px; 
+    }
+    .email-icon {
+        width: 50px;
+    }
+
+    .footer-custom {
+        position: fixed;
+    }
+    .footer-custom p {
+        font-size: 12px;
+    }
+    
+    .custom-button {
+        background-color: #00A7E3; /* Custom blue background */
+        color: white; /* White text */
+        font-size: 12px !important; /* Font size */
+        padding: 10px 20px; /* Padding */
+        border-radius: 5px; /* Slightly rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+    
+    .custom-button:hover {
+        background-color: #008bb5; /* Darker blue on hover */
+    }
+
+    .email-container {
+        margin: 0 auto; /* Remove any top margin to bring it closer to the header */
+        height: auto;
+    }
+    .d-flex label {
+        font-size: 12px;
+    }
+    
+
+ 
+}
