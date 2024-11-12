@@ -1,4 +1,5 @@
-import { customAlert, customConfirm } from './alert.js';
+import { fetchTellerDetails } from './tellerService.js'; // Import the shared function
+import { customAlert} from './alert.js';
 
 // Function to open the modal
 function openModal() {
@@ -26,33 +27,28 @@ function resetAlert() {
     alertBox.textContent = '';
 }
 
-// Asynchronous function to handle password reset API call
-const resetPassword = async (email, password, passwordConfirm) => {
-    try {
-        const res = await axios({
-            method: 'POST',
-            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/reset-password',
-            data: {
-                email,
-                password,
-                passwordConfirm,
-            },
-        });
 
-        if (res.data.status === 'success') {
-            customAlert("Password changed successfully!");
-           
-        }
-    } catch (err) {
-        customAlert("Error resetting password");
-    }
-};
+
 
 // Set up the modal functionality and form handling
-function setupModalAndForm() {
+async function setupModalAndForm() {
     const modal = document.getElementById('passwordReset');
     const openButton = document.getElementById('accountBtn');
     const closeButton = document.querySelector('.close');
+
+    // Fetch operator ID and email when setting up the modal
+    let operatorId;
+    try {
+        const tellerDetails = await fetchTellerDetails();
+        console.log(tellerDetails);
+        operatorId = tellerDetails.operatorId;
+        
+        // Populate the email field with the teller's email
+        document.getElementById('email').value = tellerDetails.email;
+    } catch (error) {
+        showModal("Error fetching teller details");
+        return;
+    }
 
     // Open modal on "Account" button click
     openButton.addEventListener('click', function(event) {
@@ -70,10 +66,10 @@ function setupModalAndForm() {
 
     // Handle form submission with password validation
     const form = modal.querySelector('form');
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', async function(event) { // Mark the handler as async
         event.preventDefault(); // Prevent form from submitting
 
-        const email = document.getElementById('email').value;
+        const oldPassword = document.getElementById('oldpassword').value;
         const newPassword = document.getElementById('newpassword').value;
         const confirmPassword = document.getElementById('confirmpassword').value;
 
@@ -83,8 +79,28 @@ function setupModalAndForm() {
             return;
         }
 
-        // Call resetPassword function with form data
-        resetPassword(email, newPassword, confirmPassword);
+        // Call resetPassword function with operatorId and form data
+        try {
+            const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/teller/reset', {
+                method: 'PATCH',
+                headers: {
+                    'operator-id': operatorId,
+                    'current-password': oldPassword,
+                    'new-password': newPassword,
+                },
+            });
+            
+            const result = await response.json();
+    
+            if (result.message) {
+                customAlert(result.message);
+                closeModal(); // Close the modal on success
+            } else {
+                customAlert(result.error || "An error occurred.");
+            }
+        } catch (err) {
+            customAlert("Error resetting password");
+        }
     });
 }
 
