@@ -146,3 +146,54 @@ exports.getTellerDetails = async (req, res) => {
         res.status(500).json({ message: 'Error fetching teller details', error });
     }
 };
+// Change Password Function
+exports.changePassword = async (req, res) => {
+    try {
+        const operatorId = req.headers['operator-id'];
+        const currentPassword = req.headers['current-password'];
+        const newPassword = req.headers['new-password'];
+
+        // Ensure all headers are provided
+        if (!operatorId || !currentPassword || !newPassword) {
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Please provide your operator ID, current password, and new password in the headers.',
+            });
+        }
+
+        // Find user by operator ID and select password field
+        const user = await Teller.findOne({ operatorId }).select('+password');
+        if (!user) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'User not found with the provided operator ID.',
+            });
+        }
+
+        // Check if the current password is correct
+        if (!(await user.correctPassword(currentPassword, user.password))) {
+            return res.status(401).json({
+                status: 'fail',
+                message: 'Operator ID and password do not match.',
+            });
+        }
+
+        // Update the password
+        user.password = newPassword;
+        
+        // Save without validating passwordConfirm
+        await user.save({ validateBeforeSave: false });
+
+        // Send a success response without setting a JWT
+        res.status(200).json({
+            status: 'success',
+            message: 'Password changed successfully!',
+        });
+    } catch (error) {
+        console.error('Error details:', error);  // Log the actual error
+        res.status(500).json({
+            status: 'fail',
+            message: 'Error changing password. Please try again later.',
+        });
+    }
+};
