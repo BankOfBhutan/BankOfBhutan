@@ -139,7 +139,9 @@ exports.getTellerDetails = async (req, res) => {
         res.status(200).json({
             name: teller.name,
             counter: teller.counter,
-            service: teller.service, // Return the service name
+            service: teller.service, 
+            email: teller.email,
+            operatorId: teller.operatorId// Return the service name
         });
     } catch (error) {
         console.error(error);
