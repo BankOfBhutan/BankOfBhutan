@@ -92,7 +92,7 @@ function createWithdrawalForm() {
             
             <div class="header">
                 <div class="bank-logo">
-                    <img src="img/BOB.png" alt="Bank of Bhutan Logo" style="width:100px;">
+                    <img src="image/BoB-Logo.svg" alt="Bank of Bhutan Logo" style="width:100px;">
                     <p><strong>Branch:</strong> Thimphu Main Branch</p>
                 </div>
                 <div class="branch-info">
