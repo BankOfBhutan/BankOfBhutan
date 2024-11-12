@@ -19,7 +19,7 @@ const populateTellerTable = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/getalltellers',  // Use the new tellers endpoint
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/getalltellers',  // Use the new tellers endpoint
             withCredentials: true  // Ensure cookies are sent
         });
 
@@ -67,7 +67,7 @@ const attachRowListeners = () => {
             const operatorId = this.closest('tr').dataset.operatorId;  // Get operator ID from the row
             if (operatorId) {
                 selectedOperatorId = operatorId;
-                axios.get(`http://localhost:4001/api/v1/users/${operatorId}`)
+                axios.get(`https://bankofbhutan-w3qb.onrender.com/api/v1/users/${operatorId}`)
                     .then(res => {
                         if (res.data.status === 'success') {
                             const operator = res.data.data.user;
@@ -99,7 +99,7 @@ const attachdeleteRowListeners = () => {
 document.getElementById('confirm-delete-btn').addEventListener('click', async () => {
     if (selectedOperatorIdToDelete) {
         try {
-            const res = await axios.delete(`http://localhost:4001/api/v1/users/${selectedOperatorIdToDelete}`);
+            const res = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/users/${selectedOperatorIdToDelete}`);
             console.log(res)
             if (res.status === 204) {
                 location.reload();  // Reload the page to reflect the deletion
@@ -140,7 +140,7 @@ document.getElementById('save-changes-btn').addEventListener('click', async () =
     };
 
     try {
-        const res = await axios.patch(`http://localhost:4001/api/v1/users/${selectedOperatorId}`, updatedData);
+        const res = await axios.patch(`https://bankofbhutan-w3qb.onrender.com/api/v1/users/${selectedOperatorId}`, updatedData);
 
         if (res.data.status === 'success') {
             showModal("Operator Information Updated successfully")

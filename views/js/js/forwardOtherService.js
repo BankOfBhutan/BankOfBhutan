@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
 
         try {
-            const response = await fetch('http://localhost:4001/api/queue/other-service', {
+            const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/queue/other-service', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

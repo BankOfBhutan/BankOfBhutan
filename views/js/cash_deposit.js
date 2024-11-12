@@ -41,7 +41,7 @@ const cash_deposit = async (service,cidNumber, Name,email, accountNumber, amount
         }
 
 
-        await axios.post('http://localhost:4001/api/v1/deposits/send-otp', { email });
+        await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/deposits/send-otp', { email });
         
         // Prompt the user to enter the OTP
         const otp = await showOtpModal();
@@ -51,7 +51,7 @@ const cash_deposit = async (service,cidNumber, Name,email, accountNumber, amount
         }
         const res = await axios({
             method:'POST',
-            url : 'http://localhost:4001/api/v1/deposits/deposit',
+            url : 'https://bankofbhutan-w3qb.onrender.com/api/v1/deposits/deposit',
             data:{
                 service,
                 cidNumber,

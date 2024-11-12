@@ -17,7 +17,7 @@ const fetchServingTokens = async () => {
         console.log('Fetching serving tokens for Service Name:', serviceName);
 
         // Make a request to the backend API to fetch serving tokens
-        const response = await fetch(`http://localhost:4001/api/queue/token-in`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/queue/token-in`, {
             method: 'GET',
             headers: {
                 'service-name': serviceName,

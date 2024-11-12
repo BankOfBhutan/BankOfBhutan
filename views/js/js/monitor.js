@@ -1,6 +1,6 @@
 window.onload = () => {
     const servingTokensTable = document.getElementById('serving-tokens');
-    const socket = io('http://localhost:4001');
+    const socket = io('https://bankofbhutan-w3qb.onrender.com');
     let previousTokens = [];
 
     function renderServingTokens(tokens) {
@@ -46,7 +46,7 @@ window.onload = () => {
 
     async function fetchServingTokens() {
         try {
-            const response = await fetch('http://localhost:4001/api/queue/serving');
+            const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/queue/serving');
             const data = await response.json();
             renderServingTokens(data.servingTokens);
             checkForNewTokens(data.servingTokens);

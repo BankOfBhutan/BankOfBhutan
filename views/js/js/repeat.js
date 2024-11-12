@@ -15,7 +15,7 @@ const repeatToken = async () => {
         }
 
         // Send a PATCH request to repeat the token for the specified service and counter
-        const response = await fetch(`http://localhost:4001/api/queue/repeat-token?serviceName=${encodeURIComponent(tellerDetails.service)}&counterNo=${tellerDetails.counter}`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/queue/repeat-token?serviceName=${encodeURIComponent(tellerDetails.service)}&counterNo=${tellerDetails.counter}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include'

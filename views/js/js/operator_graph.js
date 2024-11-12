@@ -26,8 +26,8 @@ window.fetchAndDrawData = async function fetchAndDrawData() {
     const month = viewType === 'daily' ? document.getElementById('month').value : null;
 
     const endpoint = viewType === 'daily' 
-        ? 'http://localhost:4001/api/v1/data/getDailyTokenDataBySingleOperator' 
-        : 'http://localhost:4001/api/v1/data/getMonthlyTokenDataBySingleOperator';
+        ? 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getDailyTokenDataBySingleOperator' 
+        : 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getMonthlyTokenDataBySingleOperator';
     const params = { operatorId: personId, year };
     if (viewType === 'daily') params.month = month;
 
@@ -108,7 +108,7 @@ const populateTellerTable = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/data/getTellerForGraph',  // Use the new tellers endpoint
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTellerForGraph',  // Use the new tellers endpoint
             withCredentials: true  // Ensure cookies are sent
         });
 

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!userConfirmed) return;
 
                 try {
-                    const response = await fetch('http://localhost:4001/api/queue/other-counter', {
+                    const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/queue/other-counter', {
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',

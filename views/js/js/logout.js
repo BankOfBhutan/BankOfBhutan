@@ -24,7 +24,7 @@ const logout = async () => {
         // Send a GET request to the logout endpoint on the server
         const res = await axios({
             method: 'GET', 
-            url: 'http://localhost:4001/api/v1/users/logout', // Adjust the URL if needed
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/logout', // Adjust the URL if needed
         });
 
         // If the logout is successful, redirect to the homepage or login page

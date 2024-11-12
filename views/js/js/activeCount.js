@@ -17,7 +17,7 @@ const fetchActiveCounterCount = async () => {
         const serviceName = tellerDetails.service;
 
         // Make a request to the backend API to fetch the active counter count
-        const response = await fetch(`http://localhost:4001/api/teller/teller-count`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/teller/teller-count`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

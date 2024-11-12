@@ -3,7 +3,7 @@ const getServiceStats = async () => {
     console.log(selectedService);
     try {
         // Make a request to the backend with the selected service type
-        const res = await axios.get(`http://localhost:4001/api/v1/data/getServiceStatsToday`, {
+        const res = await axios.get(`https://bankofbhutan-w3qb.onrender.com/api/v1/data/getServiceStatsToday`, {
             params: { serviceName: selectedService }  // Ensure you pass 'serviceName' as defined in the controller
         });
 
@@ -47,7 +47,7 @@ document.getElementById('searchButton').addEventListener('click', getServiceStat
 const getDetailedServiceCountsToday = async () => {
     try {
         // Make a request to the backend for detailed service counts
-        const res = await axios.get(`http://localhost:4001/api/v1/data/getDetailedServiceCountsToday`);
+        const res = await axios.get(`https://bankofbhutan-w3qb.onrender.com/api/v1/data/getDetailedServiceCountsToday`);
 
         if (res.data.status === 'success') {
             const tableBody = document.querySelector('.table_for_operator tbody');
@@ -108,7 +108,7 @@ const getMaxCounterNumber = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/data/getMaxCounterNumber' // Update to match your API endpoint
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getMaxCounterNumber' // Update to match your API endpoint
         });
   
         if (res.data.status === 'success') {

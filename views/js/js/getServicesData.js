@@ -51,7 +51,7 @@ const getServiceStatsInRange = async (startDate, endDate) => {
         if (startDate) params.startDate = startDate;
         if (endDate) params.endDate = endDate;
 
-        const res = await axios.get('http://localhost:4001/api/v1/data/getServiceStatsInRange', { params });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getServiceStatsInRange', { params });
 
         if (res.data.status === 'success') {
             const serviceStats = res.data.data.serviceStats;

@@ -9,7 +9,7 @@ const getServiceCounts = async () => {
   try {
       const res = await axios({
           method: 'GET',
-          url: 'http://localhost:4001/api/v1/data/getServiceCountToday'  // Update to match your API endpoint
+          url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getServiceCountToday'  // Update to match your API endpoint
       });
 
       if (res.data.status === 'success') {
@@ -28,7 +28,7 @@ const getMaxCounterNumber = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/data/getMaxCounterNumber'  // Update to match your API endpoint
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getMaxCounterNumber'  // Update to match your API endpoint
         });
   
         if (res.data.status === 'success') {
@@ -44,7 +44,7 @@ const getTokenTypeCountsToday = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/data/getTokenTypeCountsToday'  // Update to match your API endpoint
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTokenTypeCountsToday'  // Update to match your API endpoint
         });
   
         if (res.data.status === 'success') {

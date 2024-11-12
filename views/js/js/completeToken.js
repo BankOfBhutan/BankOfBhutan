@@ -15,7 +15,7 @@ document.getElementById('breakButton').addEventListener('click', async () => {
       };
   
       // Make the API call with PATCH method
-      const response = await fetch('http://localhost:4001/api/queue/complete-token', {
+      const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/queue/complete-token', {
         method: 'PATCH', // Use PATCH instead of GET or POST
         headers: {
           ...headers,

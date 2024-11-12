@@ -31,15 +31,17 @@ function errorshowModal(message) {
     
     errorModal.show();
 }
-const cash_withdrawal = async (service, Name,email, accountNumber, amount,contact, withdrawalDate ,WithdrawalTime)=>{
+const rtgs = async(service,Name,email,accountNumber,contact,rtgsDate,rtgsTime)=>{
     try {
-        const conflictCheck = await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/withdrawals/check_Conflict',{email,withdrawalDate,WithdrawalTime});
-
+        const conflictCheck = await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/rtgs/check_Conflict', { email, rtgsDate, rtgsTime });
+        
+        // If a conflict exists, show the appropriate error modal
         if (conflictCheck.data.conflict) {
             errorshowModal(conflictCheck.data.message);
             return;
         }
-        await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/withdrawals/send-otp', { email });
+        
+        await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/rtgs/send-otp', { email });
         
         const otp = await showOtpModal();
         if (!otp) {
@@ -48,23 +50,20 @@ const cash_withdrawal = async (service, Name,email, accountNumber, amount,contac
         }
         const res = await axios({
             method:'POST',
-            url : 'https://bankofbhutan-w3qb.onrender.com/api/v1/withdrawals/withdrawal',
+            url : 'https://bankofbhutan-w3qb.onrender.com/api/v1/rtgs/rtgs',
             data:{
                 service,
                 Name,
                 email, 
                 accountNumber, 
-                amount, 
                 contact, 
-                withdrawalDate ,
-                WithdrawalTime,
+                rtgsDate ,
+                rtgsTime,
                 otp
-
             },
         })
         console.log(res)
-
-        if (res.data.message === 'Withdrawal successfully submitted!'){
+        if (res.data.message === 'rtgs Token successfully booked!'){
             showModal('Successfully created appointment check your email');
 
             // Get the modal element
@@ -82,39 +81,40 @@ const cash_withdrawal = async (service, Name,email, accountNumber, amount,contac
                 });
             });
         }
-    } catch (error) {
-        errorshowModal("Please enter the right OTP");
         
+        
+    } catch (error) {
+        console.log("error")
+        errorshowModal("Please enter the right OTP");
     }
+
 }
 
 document.querySelector('form').addEventListener('submit',(e)=>{
     e.preventDefault()
-    const service = 'Cash Withdrawal'
+    const service = 'RTGS'
     const Name = document.getElementById('name').value
     const email = document.getElementById('email').value 
     const accountNumber = document.getElementById('Acccountnumber').value 
-    const amount = document.getElementById('amount').value
-    const contact = document.getElementById('Contact').value
-    const withdrawalDate = document.getElementById('Date').value 
-    const withdrawalTime = document.getElementById('time-input').value
-    
+    const contact = document.getElementById('contact').value
+    const rtgsDate = document.getElementById('Date').value 
+    const rtgsTime = document.getElementById('time-input').value
+
     const today = new Date().toISOString().split('T')[0];
 
-    const timeParts = withdrawalTime.split(':');
+    const timeParts = rtgsTime.split(':');
     const hour = parseInt(timeParts[0], 10);  
     const minute = parseInt(timeParts[1], 10);  
     const regex = /^[A-Za-z\s]+$/;
     const regex1 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const regex2 = /^\d{9}$/;
     const regex3 = /^(17|77)\d{6}$/;
-
-    const isValidTime = (hour >= 9 && hour < 13) || (hour >= 14 && hour < 17);
+ 
+    const isValidTime = (hour >= 9 && hour < 13) || (hour >= 14 && hour < 17); 
+    const minutes = rtgsTime.split(":")[1];
     
-    const minutes = withdrawalTime.split(":")[1];
-    
-    if (!isValidTime) {
-        errorshowModal('withdrawal appointments are not allowed during lunch hours (1:00 PM - 2:00 PM) and off-hours (5:00 PM - 8:59 AM).');
+    if (!Name || !email || !accountNumber || !contact || !rtgsDate || !rtgsTime) {
+        errorshowModal('Please fill out all fields');
         return;
     }
     if (minutes % 10 !== 0) {
@@ -133,27 +133,24 @@ document.querySelector('form').addEventListener('submit',(e)=>{
     if (!regex3.test(contact)) {
         return;
     }
-    if(withdrawalDate === today || withdrawalDate<today ){
-        errorshowModal('Withdrawal appointments cannot be created for today and Past.');
-        return;
-    }
-    const withdrawalDay = new Date(withdrawalDate).getDay();
-
-    if (withdrawalDay === 0 || withdrawalDay === 6) {
-        errorshowModal('withdrawal appointments are not allowed on weekends (Saturday and Sunday).');
+    if (!isValidTime) {
+        errorshowModal('rtgs appointments are not allowed during lunch hours (1:00 PM - 2:00 PM) and off-hours (5:00 PM - 8:59 AM).');
         return;
     }
 
-    cash_withdrawal( service,
-        Name,
-        email, 
-        accountNumber, 
-        amount, 
-        contact,  
-        withdrawalDate ,
-        withdrawalTime)
+    if(rtgsDate === today || rtgsDate<today ){
+        errorshowModal('rtgs appointments cannot be created for today and Past.');
+        return;
+    }
+    const rtgsDay = new Date(rtgsDate).getDay();
 
-})
+    if (rtgsDay === 0 || rtgsDay === 6) {
+        errorshowModal('rtgs appointments are not allowed on weekends (Saturday and Sunday).');
+        return;
+    }
+    rtgs(service,Name,email,accountNumber,contact,rtgsDate,rtgsTime)
+
+});
 function validateField(field,errorField, isValid) {
     if (!isValid) {
         field.classList.add('invalid');
@@ -167,7 +164,7 @@ const alphabeticRegex = /^[A-Za-z\s]+$/;
 const regex1 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regex2 = /^\d{9}$/;
 const regex3 = /^(17|77)\d{6}$/;
-const regex4 = /^[0-9]*$/;
+
 document.getElementById('name').addEventListener('input', function () {
     const referralNumber = this.value.trim();
     const isValid = alphabeticRegex.test(referralNumber);
@@ -183,13 +180,8 @@ document.getElementById('Acccountnumber').addEventListener('input', function () 
     const isValid = regex2.test(referralNumber);
     validateField(this,document.getElementById('error_account'), isValid);
 });
-document.getElementById('Contact').addEventListener('input', function () {
+document.getElementById('contact').addEventListener('input', function () {
     const referralNumber = this.value.trim();
     const isValid = regex3.test(referralNumber);
     validateField(this,document.getElementById('contact_error'), isValid);
-});
-document.getElementById('amount').addEventListener('input', function () {
-    const referralNumber = this.value.trim();
-    const isValid = regex4.test(referralNumber);
-    validateField(this,document.getElementById('error_amt'), isValid);
 });

@@ -33,14 +33,14 @@ function errorshowModal(message) {
 }
 const DS = async (service, Name , email,accountNumber,contact,dsDate,dsTime)=>{
     try {
-        const conflictCheck = await axios.post('http://localhost:4001/api/v1/ds/check_Conflict',{email,dsDate,dsTime});
+        const conflictCheck = await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/ds/check_Conflict',{email,dsDate,dsTime});
 
         if (conflictCheck.data.conflict) {
             errorshowModal(conflictCheck.data.message);
             return;
         }
         
-        await axios.post('http://localhost:4001/api/v1/ds/send-otp', { email });
+        await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/ds/send-otp', { email });
         
         const otp = await showOtpModal();
         if (!otp) {
@@ -50,7 +50,7 @@ const DS = async (service, Name , email,accountNumber,contact,dsDate,dsTime)=>{
 
         const res = await axios({
             method:'POST',
-            url: 'http://localhost:4001/api/v1/ds/dollarSelling',
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/ds/dollarSelling',
             data:{
                 service,
                 Name,

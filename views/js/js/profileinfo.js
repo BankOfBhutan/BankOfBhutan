@@ -38,7 +38,7 @@ document.getElementById('update-password-btn').addEventListener('click', async (
     try {
         const res = await axios({
             method: 'PATCH',
-            url: 'http://localhost:4001/api/v1/users/updateMyPassword',  // Adjust the URL as needed
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/updateMyPassword',  // Adjust the URL as needed
             data: {
                 passwordCurrent: currentPassword,   // Current password to validate
                 password: newPassword,             // New password
@@ -61,7 +61,7 @@ const getUserData = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://localhost:4001/api/v1/users/getauser',  // Update to match your API endpoint
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/getauser',  // Update to match your API endpoint
         });
 
         if (res.data.status === 'success') {

@@ -1,4 +1,5 @@
 // import {showAlert} from './alert.js'
+
 function showModal(message) {
     document.getElementById('wording_for_modal').textContent = message;
     
@@ -25,7 +26,6 @@ const getCookie = (name) => {
     return null; // Return null if the cookie is not found
 };
 
-
 // Example: Retrieve the email from the cookie
 const email = getCookie('email');
 if (email) {
@@ -34,36 +34,34 @@ if (email) {
     console.log('Cookie expired or not set');
 }
 
-document.getElementById('confirm').addEventListener('click',(e)=>{
+
+document.getElementById('verifyotp').addEventListener('click',(e)=>{
     e.preventDefault()
-    const password = document.getElementById('pass1').value
-    const passwordConfirm = document.getElementById('pass2').value
-    resetPassword(email, password, passwordConfirm)
+    const otp = document.getElementById('otp').value
+    verifyOtp(otp)
 
 })
 
-
-const resetPassword = async (email, password, passwordConfirm) => {
+// Submit OTP verification request with the email
+const verifyOtp = async (otp) => {
+    console.log(email, otp)
     try {
         const res = await axios({
             method: 'POST',
-            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/reset-password',
-            data: {
-                email,  // This should come from the previous step
-                password,
-                passwordConfirm,
-            },
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/verify-otp',
+            data: { email, otp }  // Use email from cookie
         });
 
         if (res.data.status === 'success') {
-            showModal("Password changed successfully!");
-            // showAlert('success', 'Password changed successfully!');
+            // showAlert('success', 'OTP verified! Redirecting to reset password...');
+            showModal("OTP verified! Redirecting to reset password...");
             window.setTimeout(() => {
-                location.assign('/');  // Redirect to login page
+                location.assign('/forgotpass2');  // Navigate to reset password page
             }, 1500);
         }
     } catch (err) {
-        errorshowModal("Error resetting password");
-        // showAlert('error', err.response.data.message || 'Error resetting password');
+        errorshowModal("Error verifying OTP");
+        // showAlert('error', err.response.data.message || 'Error verifying OTP');
     }
 };
+

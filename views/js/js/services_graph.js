@@ -11,7 +11,7 @@ window.fetchAndDrawData = async function fetchAndDrawData() {
     if (viewType === 'daily') params.month = month;
 
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/data/getTokenStatsGroupedByService', { params });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTokenStatsGroupedByService', { params });
         
         if (res.data.status === 'success') {
             const tokenStats = res.data.data.tokenStats;

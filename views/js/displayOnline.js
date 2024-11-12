@@ -1,6 +1,6 @@
 const fetchQueue = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/display');
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/display');
         displayQueue(res.data.data);
     } catch (err) {
         console.log(err);

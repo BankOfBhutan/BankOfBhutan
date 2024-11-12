@@ -39,7 +39,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
         // Make the POST request to the API
         const res = await axios({
             method: 'POST',
-            url: 'http://localhost:4001/api/v1/search/search',
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/search/search',
             data: { accountNumber },
         });
         console.log(res);
@@ -240,7 +240,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 const email = tokenData.deposits[index].email;
                 console.log("deposits Email : ",email);
 
-                await axios.post('http://localhost:4001/api/v1/search/send-otp', { email });
+                await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/search/send-otp', { email });
 
                 const otp = await showOtpModal();
                 if (!otp) {
@@ -249,7 +249,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 }
     
                 try {
-                    const response = await axios.delete(`http://localhost:4001/api/v1/search/search/${depositId}`, {
+                    const response = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/search/search/${depositId}`, {
                         data: { email, otp }
                     });
                     console.log('response',response);
@@ -270,7 +270,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 const index = this.dataset.index;
                 const withdrawalsId = tokenData.withdrawals[index]._id;
                 const email = tokenData.withdrawals[index].email;
-                await axios.post('http://localhost:4001/api/v1/search/send-otp', { email });
+                await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/search/send-otp', { email });
 
                 const otp = await showOtpModal();
                 if (!otp) {
@@ -278,7 +278,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                     return;
                 }
                     try {
-                        const res = await axios.delete(`http://localhost:4001/api/v1/search/search/${withdrawalsId}`,{
+                        const res = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/search/search/${withdrawalsId}`,{
                             data:{email,otp}
                         });
                         console.log('response',res);
@@ -300,7 +300,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 const index = this.dataset.index;
                 const rtgsId = tokenData.rtgs[index]._id;
                 const email = tokenData.rtgs[index].email;
-                await axios.post('http://localhost:4001/api/v1/search/send-otp', { email });
+                await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/search/send-otp', { email });
 
                 const otp = await showOtpModal();
                 if (!otp) {
@@ -309,7 +309,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 }
                 
                 try {
-                    const res = await axios.delete(`http://localhost:4001/api/v1/search/search/${rtgsId}`,{
+                    const res = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/search/search/${rtgsId}`,{
                         data:{email,otp}
                     });
                     console.log('response',res);
@@ -332,7 +332,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 const swiftId = tokenData.swift[index]._id;
                 const email = tokenData.swift[index].email; // Assuming email is available in the SWIFT data
 
-                await axios.post('http://localhost:4001/api/v1/search/send-otp', { email });
+                await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/search/send-otp', { email });
 
                 const otp = await showOtpModal();
                 if (!otp) {
@@ -341,7 +341,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 }
 
                 try {
-                    const response = await axios.delete(`http://localhost:4001/api/v1/search/search/${swiftId}`, {
+                    const response = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/search/search/${swiftId}`, {
                         data: { email, otp }
                     });
 
@@ -362,7 +362,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 const atsId = tokenData.ats[index]._id;
                 const email = tokenData.ats[index].email; // Assuming email is available in the ATS data
 
-                await axios.post('http://localhost:4001/api/v1/search/send-otp', { email });
+                await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/search/send-otp', { email });
 
                 const otp = await showOtpModal();
                 console.log(otp)
@@ -372,7 +372,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 }
 
                 try {
-                    const response = await axios.delete(`http://localhost:4001/api/v1/search/search/${atsId}`, {
+                    const response = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/search/search/${atsId}`, {
                         data: { email, otp }  // Pass email and otp as query parameters
                     });
                     
@@ -400,7 +400,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 const dollarsellingId = tokenData.dollarselling[index]._id;
                 const email = tokenData.dollarselling[index].email; // Assuming email is available in the Dollar Selling data
 
-                await axios.post('http://localhost:4001/api/v1/search/send-otp', { email });
+                await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/search/send-otp', { email });
 
                 const otp = await showOtpModal();
                 if (!otp) {
@@ -409,7 +409,7 @@ document.querySelector('.submit_button').addEventListener('click', async (e) => 
                 }
 
                 try {
-                    const response = await axios.delete(`http://localhost:4001/api/v1/search/search/${dollarsellingId}`, {
+                    const response = await axios.delete(`https://bankofbhutan-w3qb.onrender.com/api/v1/search/search/${dollarsellingId}`, {
                         data: { email, otp }
                     });
 

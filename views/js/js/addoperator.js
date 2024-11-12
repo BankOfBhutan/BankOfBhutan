@@ -52,7 +52,7 @@ export const signup = async(name,email,password,service,counter)=>{
     try{
         const res = await axios({
             method:'POST',
-            url:'http://localhost:4001/api/v1/users/signup',
+            url:'https://bankofbhutan-w3qb.onrender.com/api/v1/users/signup',
             data:{
                 name,
                 email,

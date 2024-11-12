@@ -12,7 +12,7 @@ const fetchServedCountsAndRenderChart = async () => {
         const serviceName = tellerDetails.service;
 
         // Make a request to the backend to get served token counts
-        const response = await fetch(`http://localhost:4001/api/queue/token-count`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/queue/token-count`, {
             method: 'GET',
             headers: {
                 'service-name': serviceName,
@@ -106,5 +106,8 @@ const getRandomColor = (index) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchServedCountsAndRenderChart();
-    setInterval(fetchServedCountsAndRenderChart, 10000);
+    setInterval(fetchServedCountsAndRenderChart, 10000
+
+
+    );
 });

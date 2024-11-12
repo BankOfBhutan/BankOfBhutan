@@ -77,7 +77,7 @@ const getTokenTypeCounts = async (startDate, endDate) => {
         if (endDate) params.endDate = endDate;
 
         // Fetch data from API
-        const res = await axios.get('http://localhost:4001/api/v1/data/getTokenTypeCounts', { params });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTokenTypeCounts', { params });
 
         if (res.data.status === 'success') {
             tokenCounts = res.data.data;
@@ -97,7 +97,7 @@ const getAppointmentInfo = async (startDate, endDate) => {
         if (endDate) params.endDate = endDate;
 
         // Fetch data from API
-        const res = await axios.get('http://localhost:4001/api/v1/data/getAppointmentInfo', { params });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getAppointmentInfo', { params });
 
         if (res.data.status === 'success') {
             const appointmentInfo = res.data.data.appointments;
@@ -117,7 +117,7 @@ const getFeedbackInfo = async (startDate, endDate) => {
         if (endDate) params.endDate = endDate;
 
         // Fetch data from API
-        const res = await axios.get('http://localhost:4001/api/v1/data/getFeedbackInfo', { params });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getFeedbackInfo', { params });
 
         if (res.data.status === 'success') {
             const feedback = res.data.data.feedbackToday;
@@ -137,7 +137,7 @@ const getTokensForAppointmentsByService = async (startDate, endDate) => {
         if (endDate) params.endDate = endDate;
 
         // Fetch data from API
-        const res = await axios.get('http://localhost:4001/api/v1/data/getTokensForAppointmentsByService', { params });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTokensForAppointmentsByService', { params });
 
         if (res.data.status === 'success') {
             const data = res.data.data.result;

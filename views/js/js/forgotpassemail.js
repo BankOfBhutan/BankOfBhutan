@@ -35,7 +35,7 @@ const sendOtp = async (email) => {
     try {
         const res = await axios({
             method: 'POST',
-            url: 'http://localhost:4001/api/v1/users/send-otp',  // Assuming your route for sending OTP is defined like this
+            url: 'https://bankofbhutan-w3qb.onrender.com/api/v1/users/send-otp',  // Assuming your route for sending OTP is defined like this
             data: {
                 email,
             },

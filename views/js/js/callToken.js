@@ -50,7 +50,7 @@ const fetchTotalCurrentToken = async () => {
 
 const fetchTokenNumber = async (serviceName, operatorId, counterNo) => {
     try {
-        const response = await fetch(`http://localhost:4001/api/queue/next-token?serviceName=${encodeURIComponent(serviceName)}&counterNo=${encodeURIComponent(counterNo)}&operatorId=${encodeURIComponent(operatorId)}`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/queue/next-token?serviceName=${encodeURIComponent(serviceName)}&counterNo=${encodeURIComponent(counterNo)}&operatorId=${encodeURIComponent(operatorId)}`, {
             method: 'GET',
             credentials: 'include',
         });

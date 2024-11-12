@@ -31,7 +31,7 @@ document.getElementById('requeueTokenBtn').addEventListener('click', async funct
             if (!userConfirmed) return;
 
             try {
-                const response = await fetch('http://localhost:4001/api/queue/requeue', {
+                const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/queue/requeue', {
                     method: 'GET', // Change this method to 'POST' or 'PUT' if appropriate
                     headers: {
                         'token-number': currentToken,

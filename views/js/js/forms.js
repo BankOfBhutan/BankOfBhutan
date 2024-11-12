@@ -1,6 +1,6 @@
 const checkDepositData = async (tokenNumber) => {
     try {
-        const response = await fetch(`http://localhost:4001/api/v1/walkindeposit/transactions/${encodeURIComponent(tokenNumber)}`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/v1/walkindeposit/transactions/${encodeURIComponent(tokenNumber)}`, {
             method: 'GET',
             credentials: 'include', // Include cookies for authentication
         });
@@ -28,7 +28,7 @@ const checkDepositData = async (tokenNumber) => {
 // Check for withdraw form data using the token number
 const checkWithdrawData = async (tokenNumber) => {
     try {
-        const response = await fetch(`http://localhost:4001/api/v1/walkinwithdrawal/transactions/${encodeURIComponent(tokenNumber)}`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/v1/walkinwithdrawal/transactions/${encodeURIComponent(tokenNumber)}`, {
             method: 'GET',
             credentials: 'include', // Include cookies for authentication
         });
@@ -201,7 +201,7 @@ function saveUpdates() {
     // Retrieve the transaction ID from the hidden field
     const transactionId = document.getElementById('transaction-id').value;
 
-    fetch(`http://localhost:4001/api/v1/walkinwithdrawal/transactions/${transactionId}`, {
+    fetch(`https://bankofbhutan-w3qb.onrender.com/api/v1/walkinwithdrawal/transactions/${transactionId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -395,7 +395,7 @@ function saveDepositUpdates() {
 
     const transactionId = document.getElementById('transaction-id').value;
 
-    fetch(`http://localhost:4001/api/v1/walkindeposit/transactions/${transactionId}`, {
+    fetch(`https://bankofbhutan-w3qb.onrender.com/api/v1/walkindeposit/transactions/${transactionId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

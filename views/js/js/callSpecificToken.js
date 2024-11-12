@@ -52,7 +52,7 @@ function setupModalAndForm() {
             const operatorId = tellerDetails.operationID;
 
             // Make API request to call specific token
-            const response = await fetch('http://localhost:4001/api/queue/specific-token', {
+            const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/queue/specific-token', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

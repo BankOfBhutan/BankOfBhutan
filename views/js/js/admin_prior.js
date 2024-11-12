@@ -63,7 +63,7 @@ $(document).ready(function() {
         if (tokenId && operatorId) {
             try {
                 // Send POST request to the server
-                const res = await axios.post('http://localhost:4001/api/v1/data/assignTokenToOperator', {
+                const res = await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/data/assignTokenToOperator', {
                     tokenId: tokenId,
                     operatorId: operatorId
                 });
@@ -85,7 +85,7 @@ $(document).ready(function() {
 // Function to populate tokens
 const populateTokenTable = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/data/getTodayPendingTokens', { withCredentials: true });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTodayPendingTokens', { withCredentials: true });
 
         if (res.data.status === 'success') {
             const pendingTokens = res.data.data.pendingTokens;
@@ -110,7 +110,7 @@ const populateTokenTable = async () => {
 // Function to populate operators
 const populateTellerTable = async () => {
     try {
-        const res = await axios.get('http://localhost:4001/api/v1/data/getTellerForGraph', { withCredentials: true });
+        const res = await axios.get('https://bankofbhutan-w3qb.onrender.com/api/v1/data/getTellerForGraph', { withCredentials: true });
 
         if (res.data.status === 'success') {
             const tellers = res.data.data;

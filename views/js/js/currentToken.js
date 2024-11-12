@@ -20,7 +20,7 @@ const fetchServingTokenForTeller = async () => {
         const counterNo = tellerDetails.counter;
         const service = tellerDetails.service
         // Make a request to the backend API to fetch the currently serving token for the specified counter using query parameters
-        const response = await fetch(`http://localhost:4001/api/queue/current-token?serviceName=${serviceName}&counterNo=${counterNo}`, {
+        const response = await fetch(`https://bankofbhutan-w3qb.onrender.com/api/queue/current-token?serviceName=${serviceName}&counterNo=${counterNo}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

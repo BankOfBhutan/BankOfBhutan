@@ -41,7 +41,7 @@ const ats = async(service,Name,email,accountNumber,contact,atsDate,atsTime)=>{
             return;
         }
         
-        await axios.post('http://localhost:4001/api/v1/ats/send-otp', { email });
+        await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/ats/send-otp', { email });
         
         const otp = await showOtpModal();
         if (!otp) {
@@ -50,7 +50,7 @@ const ats = async(service,Name,email,accountNumber,contact,atsDate,atsTime)=>{
         }
         const res = await axios({
             method:'POST',
-            url : 'http://localhost:4001/api/v1/ats/ATS',
+            url : 'https://bankofbhutan-w3qb.onrender.com/api/v1/ats/ATS',
             data:{
                 service,
                 Name,
