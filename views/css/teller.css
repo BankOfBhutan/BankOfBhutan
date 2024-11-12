@@ -793,7 +793,26 @@ select {
 .forward-btn:hover {
     background-color: #008ac7;
 }
+/* Form field styling */
+.modal-content form input[type="email"],
+.modal-content form input[type="password"],
+.modal-content form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
 
+.modal-content form button.btn-call {
+    background-color: #0dcaf0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content form button.btn-call:hover {
+    background-color: #0dcaf0;
+}
 @media (max-width: 767.98px) {
 	.header-container .col-auto p {
 		text-align: center;
