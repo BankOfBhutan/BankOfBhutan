@@ -33,7 +33,7 @@ function errorshowModal(message) {
 }
 const ats = async(service,Name,email,accountNumber,contact,atsDate,atsTime)=>{
     try {
-        const conflictCheck = await axios.post('http://localhost:4001/api/v1/ats/check_Conflict', { email, atsDate, atsTime });
+        const conflictCheck = await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/ats/check_Conflict', { email, atsDate, atsTime });
         
         // If a conflict exists, show the appropriate error modal
         if (conflictCheck.data.conflict) {
