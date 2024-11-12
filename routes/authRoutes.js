@@ -13,4 +13,5 @@ router.use(tellerAuthController.protect);
 // Route to get the logged-in teller's details
 router.get('/teller-details', tellerAuthController.getTellerDetails);
 
+router.patch('/reset', authController.changePassword)
 module.exports = router;
