@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branch Walk-In Customer Service Queue System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/android-chrome-512x512.png"> 
+    <!-- Load Open Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/SWIFT.css">
+    <style>
+        .alert {
+            position: fixed;
+            top: -50px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 400px; 
+            padding: 10px 15px; 
+            z-index: 9999;
+            text-align: center;
+            transition: top 0.5s ease-in-out;
+            font-size: 14px; 
+            display: none;
+        }
+
+
+        .alert-primary {
+            background-color: #13A4DD;
+            color: white;
+        }
+
+        .alert-danger {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="blue-background">
+    <!-- Header -->
+    <div class="container-fluid bg-white py-3 shadow-sm header-container">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <img src="image/BOB.png" alt="Bank of Bhutan Logo" class="logo">
+            </div>
+            <div class="col">
+                <h2 class="m-0">Branch Walk-In Customer Service Queue System</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row justify-content-center align-items-stretch">
+            <div class="col-md-12">
+                <div class="border border-flat p-4 bg-white position-relative">
+                    <div id="successMessage" class="alert alert-primary" role="alert"></div>
+                    <div id="errorMessage" class="alert alert-danger" role="alert"></div>
+                    <button id="closeButton" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+
+
+                    <h3 class="text-start topic  mb-4">Online Token Generator</h3>
+                    <p class="text-start mb-3">Selected service is SWIFT</p>
+
+                    <hr class="custom-hr">
+
+                    <div class="row mb-3 align-items-center justify-content-between">
+                        <div class="col-md-6">
+                           <p class="text-start mb-3 mt-4">Please fill the form</p>
+                 
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end align-items-center ref-container">
+                            <label class="form-label me-2 mb-0 bank-ref-label">Bank Application Ref.No:</label>
+                            <span class="ref-line"></span> 
+                        </div>
+                    </div>
+
+                     <!-- Form: For Education -->
+                    <h5 class="text-start mb-3 " >For Education:</h5>
+
+                    <hr class="custom-hr">
+                    <!-- Institution Details -->
+                    <form id="swiftForm">
+                        
+                        <h6 class="text-start mb-3 mt-4" >Institutions where Admission has been obtained:</h6>
+                        <p class="text-start">(Need a copy of Letter of Acceptance)</p>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="institutionName" class="form-label">Institution Name</label>
+                                <input type="text" id="institutionName" class="form-control" placeholder="Enter Name of the Institution">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="institutionAddress" class="form-label">Institution Address</label>
+                                <input type="text" id="institutionAddress" class="form-control" placeholder="Enter Address of the Institution">
+                            </div>
+                        </div>
+
+                        <!-- Course Details -->
+                        <div class="row mb-3">
+                            <div class="col-md-12 form-group">
+                                <label for="courseName" class="form-label">Name of the Course to be Pursued</label>
+                                <input type="text" id="courseName" class="form-control" placeholder="Enter the Course Name">
+                            </div>
+                        </div>
+                        
+                        
+                         <!-- Date of Commencement and Duration -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="commencementDate" class="form-label">Date of Commencement (YYYY-MM-DD)</label>
+                                <input type="text" id="commencementDate" class="form-control" placeholder="yyyy-mm-dd">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="courseDuration" class="form-label">Duration(YYYY-MM-DD)</label>
+                                <input type="text" id="courseDuration" class="form-control" placeholder="yyyy-mm-dd">
+                            </div>
+                            
+                        </div>
+
+                        
+                        <!-- Travel Date and Time -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="travelDate" class="form-label">Date of Travel(YYYY-MM-DD)</label>
+                                <input type="text" id="travelDate" class="form-control" placeholder="yyyy-mm-dd">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="travelTime" class="form-label">Time</label>
+                                <input type="text" id="travelTime" class="form-control" placeholder="Secs/Mins/Hours">
+                            </div>
+                            
+                            
+                        </div>
+                        <hr class="custom-hr">
+
+                        <!-- Tuition Fees -->
+                        
+                        <h6 class="text-start">Tuitions Fees:</h6>
+                        <p>(Need a copy of fee schedule from the institution)</p>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="tuitionAmount" class="form-label">Amount</label>
+                                <input type="text" id="tuitionAmount" class="form-control" placeholder="Enter the Tuition Amount">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Mode of Payment</label>
+                                <div class="d-flex gap-3">
+                                    <label class="radio-label">
+                                        <input type="radio" name="tuitionPaymentMode" value="SWIFT"> SWIFT
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="tuitionPaymentMode" value="DRAFT"> DRAFT
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <hr class="custom-hr">
+
+                        <h6 class="text-start">Stipend:</h6>
+                      
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="stipendAmount" class="form-label">Amount</label>
+                                <input type="text" id="stipendAmount" class="form-control" placeholder="Not exceeding US $900 p.m">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Mode of Payment</label>
+                                <div class="d-flex gap-3">
+                                    <label class="radio-label">
+                                        <input type="radio" name="stipendPaymentMode" value="SWIFT"> SWIFT
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="stipendPaymentMode" value="DRAFT"> DRAFT
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="stipendPaymentMode" value="DEBIT CARD"> DEBIT CARD
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="custom-hr">
+
+                        <!-- Living Allowance -->
+                        <h6 class="text-start">Living Allowance/Incidental Expenses:</h6>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="livingAllowance" class="form-label">Amount</label>
+                                <input type="text" id="livingAllowance" class="form-control" placeholder="Not exceeding US $1200 p.m">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Mode of Payment</label>
+                                <div class="d-flex gap-3">
+                                    <label class="radio-label">
+                                        <input type="radio" name="allowancePaymentMode" value="SWIFT"> SWIFT
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="allowancePaymentMode" value="DRAFT"> DRAFT
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="allowancePaymentMode" value="DEBIT CARD"> DEBIT CARD
+                                    </label>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <hr class="custom-hr">
+                        <!-- Total AMount -->
+                        
+
+                        <div class="row mb-3">
+                            <div class="col-md-12 form-group">
+                                <label for="totalAmount" class="form-label">Total Amount</label>
+                                <input type="text" id="totalAmount" class="form-control" placeholder="Enter the Total Amount">
+                            </div>
+                        </div>
+                         <!-- Submit Button -->
+
+
+                        <button type="submit" id="submitBtn" class="submit-btn btn ">Submit Form</button>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-4 py-4 footer-custom">
+        <div class="container">
+            <p>&copy; 2024 <a href="#" class="text-decoration-none" style="color: #00A7E3;">Bank of Bhutan</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to show success message
+        function showSuccess(message) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            successMessage.style.top = '20px';
+            setTimeout(() => {
+                successMessage.style.top = '-100px';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 500);
+            }, 5000);
+        }
+    
+        // Function to show error message
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            errorMessage.style.top = '20px';
+            setTimeout(() => {
+                errorMessage.style.top = '-100px';
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 500);
+            }, 5000);
+        }
+    
+        // Function to validate the form
+        function validateForm() {
+            const errors = [];
+            const institutionName = document.getElementById('institutionName').value.trim();
+            const institutionAddress = document.getElementById('institutionAddress').value.trim();
+            const courseName = document.getElementById('courseName').value.trim();
+            const courseDuration = document.getElementById('courseDuration').value.trim();
+            const travelTime = document.getElementById('travelTime').value.trim();
+            const tuitionAmount = document.getElementById('tuitionAmount').value.trim();
+            const tuitionPaymentMode = document.querySelector('input[name="tuitionPaymentMode"]:checked');
+            const stipendAmount = document.getElementById('stipendAmount').value.trim();
+            const stipendPaymentMode = document.querySelector('input[name="stipendPaymentMode"]:checked');
+            const livingAllowance = document.getElementById('livingAllowance').value.trim();
+            const allowancePaymentMode = document.querySelector('input[name="allowancePaymentMode"]:checked');
+            const totalAmount = document.getElementById('totalAmount').value.trim();
+    
+            // Validate required fields (excluding date fields)
+            if (!institutionName) errors.push('Institution Name is required.');
+            if (!institutionAddress) errors.push('Institution Address is required.');
+            if (!courseName) errors.push('Course Name is required.');
+            if (!courseDuration) errors.push('Course Duration is required.');
+            if (!travelTime) errors.push('Travel Time is required.');
+            if (!tuitionAmount || isNaN(tuitionAmount) || tuitionAmount <= 0) errors.push('Tuition Amount is required and must be a positive number.');
+            if (!tuitionPaymentMode) errors.push('Tuition Payment Mode is required.');
+            if (!stipendAmount || isNaN(stipendAmount) || stipendAmount <= 0) errors.push('Stipend Amount is required and must be a positive number.');
+            if (!stipendPaymentMode) errors.push('Stipend Payment Mode is required.');
+            if (!livingAllowance || isNaN(livingAllowance) || livingAllowance <= 0) errors.push('Living Allowance is required and must be a positive number.');
+            if (!allowancePaymentMode) errors.push('Allowance Payment Mode is required.');
+            if (!totalAmount || isNaN(totalAmount) || totalAmount <= 0) errors.push('Total Amount is required and must be a positive number.');
+    
+            // Show error messages if there are any validation errors
+            if (errors.length > 0) {
+                showError(errors.join(' '));
+                return false;
+            }
+    
+            return true;
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve form data from localStorage that was stored from SWIFT.html
+            const storedFormData = localStorage.getItem('swiftFormData');
+            const swiftFormData = storedFormData ? JSON.parse(storedFormData) : {};
+    
+            // Pre-fill the form with the previously entered data from SWIFT.html if required
+            if (swiftFormData.orderingCustomerName) {
+                document.getElementById('institutionName').value = swiftFormData.orderingCustomerName || '';
+                document.getElementById('institutionAddress').value = swiftFormData.orderingCustomerAddress || '';
+            }
+    
+            // Close button functionality
+            document.querySelector('.btn-close').addEventListener('click', function () {
+                window.location.href = '/Token.html';
+            });
+    
+            // Handle form submission for SWIFT2.html
+            document.querySelector('form').addEventListener('submit', async function(event) {
+                event.preventDefault();
+    
+                // Validate the form before submission
+                if (!validateForm()) return;
+    
+                // Collect form data specific to SWIFT2.html
+                const additionalFormData = {
+                    institutionName: document.getElementById('institutionName').value.trim(),
+                    institutionAddress: document.getElementById('institutionAddress').value.trim(),
+                    courseName: document.getElementById('courseName').value.trim(),
+                    commencementDate: document.getElementById('commencementDate').value.trim(),
+                    courseDuration: document.getElementById('courseDuration').value.trim(),
+                    travelDate: document.getElementById('travelDate').value.trim(),
+                    travelTime: document.getElementById('travelTime').value.trim(),
+                    tuitionAmount: document.getElementById('tuitionAmount').value.trim(),
+                    tuitionPaymentMode: document.querySelector('input[name="tuitionPaymentMode"]:checked').value,
+                    stipendAmount: document.getElementById('stipendAmount').value.trim(),
+                    stipendPaymentMode: document.querySelector('input[name="stipendPaymentMode"]:checked').value,
+                    livingAllowance: document.getElementById('livingAllowance').value.trim(),
+                    allowancePaymentMode: document.querySelector('input[name="allowancePaymentMode"]:checked').value,
+                    totalAmount: document.getElementById('totalAmount').value.trim(),
+                    service: "SWIFT"
+                };
+    
+                // Merge the data from SWIFT.html (from localStorage) and the current SWIFT2 form data
+                const completeFormData = { ...swiftFormData, ...additionalFormData };
+    
+                console.log('Complete Form Data:', completeFormData);
+    
+                try {
+                    // Send the merged form data to the backend   https://bob-branchwalk-insystem.onrender.com
+                    const response = await fetch('https://bankofbhutan-w3qb.onrender.com/api/v1/customer/submit-swift', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(completeFormData),
+                    });
+    
+                    const result = await response.json();
+    
+                    if (response.ok) {
+                        showSuccess('SWIFT Education form submitted successfully!');
+                        // Clear localStorage to avoid keeping old data
+                        localStorage.removeItem('swiftFormData');
+                        setTimeout(() => {
+                            window.location.href = 'Email.html?service=SWIFT';
+                        }, 3000);
+                    } else {
+                        showError(result.message || 'Form submission failed.');
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    showError('An error occurred while submitting the form.');
+                }
+            });
+        });
+    </script> 
+</body>
+
+</html>

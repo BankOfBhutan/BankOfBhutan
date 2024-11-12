@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branch Walk-In Customer Service Queue System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/android-chrome-512x512.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/walkincss/RTGS.css">
+    <style>
+        .alert {
+            position: fixed;
+            top: -50px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 400px; 
+            padding: 10px 15px; 
+            z-index: 9999;
+            text-align: center;
+            transition: top 0.5s ease-in-out;
+            font-size: 14px; 
+            display: none;
+        }
+        .alert-primary {
+            background-color: #13A4DD; 
+            color: white; 
+        }
+        .alert-danger {
+            background-color: #f44336; 
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="blue-background">
+    <!-- Header -->
+    <div class="container-fluid bg-white py-3 shadow-sm header-container">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <img src="image/BOB.png" alt="Bank of Bhutan Logo" class="logo">
+            </div>
+            <div class="col">
+                <h2 class="m-0">Branch Walk-In Customer Service Queue System</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row justify-content-center align-items-stretch">
+            <div class="col-md-12">
+                <div class="border border-flat p-4 bg-white position-relative">
+                    <div id="successMessage" class="alert alert-primary" role="alert" style="display:none;"></div>
+                    <div id="errorMessage" class="alert alert-danger" role="alert" style="display:none;"></div>
+    
+                    <!-- Close Button in Top Right Corner -->
+                    <button class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close" id="closeButton"></button>
+
+                    <h3 class="text-start topic mb-4">Online Token Generator</h3>
+                    <p class="text-start mb-3">Selected service is RTGS</p>
+
+                    <hr class="custom-hr">
+
+                    <div class="row mb-3 align-items-center justify-content-between">
+                        <div class="col-md-6">
+                           <p class="text-start mb-3 mt-4">Please fill the form</p>
+                 
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end align-items-center ref-container">
+                            <label class="form-label me-2 mb-0 bank-ref-label">Bank Application Ref.No:</label>
+                            <span class="ref-line"></span>
+                        </div>
+                    </div>
+
+                    <!-- Form: Depositor Details -->
+                    <form id="rtgsForm">
+                        <h6 class="text-start">Depositor Details</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="accountNumberDepositor" class="form-label">Account Number</label>
+                                <input type="text" id="accountNumberDepositor" class="form-control" placeholder="Enter saving account number" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="nameDepositor" class="form-label">Name</label>
+                                <input type="text" id="nameDepositor" class="form-control" placeholder="Enter name of the account holder" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="amountDepositor" class="form-label">Amount</label>
+                                <input type="text" id="amountDepositor" class="form-control" placeholder="Enter sum of account holder" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="phoneDepositor" class="form-label">Phone</label>
+                                <input type="text" id="phoneDepositor" class="form-control" placeholder="Enter contact number" pattern="(17|77)\d{6}" title="Please enter an 8-digit phone number starting with 17 or 77" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="licenseDepositor" class="form-label">License/CID No</label>
+                                <input type="text" id="licenseDepositor" class="form-control" placeholder="Enter the license/CID no" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="tokenNumber" class="form-label">Token Number</label>
+                                <input type="text" id="tokenNumber" name="tokenNumber" value="" readonly>
+                            </div>
+                        </div>
+
+                        <h6 class="text-start">Purpose</h6>
+                        
+
+                        <div class="mb-3">
+                            <div class="d-flex flex-wrap gap-3">
+                                <input type="radio" name="purpose" value="bill_payment" id="billPayment" aria-label="Bill payment">
+                                <label for="billPayment" class="radio-label">Bill payment</label>
+
+                                <input type="radio" name="purpose" value="education" id="education" aria-label="Education">
+                                <label for="education" class="radio-label">Education</label>
+
+                                <input type="radio" name="purpose" value="medical" id="medical" aria-label="Medical">
+                                <label for="medical" class="radio-label">Medical</label>
+
+                                <input type="radio" name="purpose" value="salary" id="salary" aria-label="Salary">
+                                <label for="salary" class="radio-label">Salary</label>
+
+                                <input type="radio" name="purpose" value="gov_fund" id="govFund" aria-label="Government Fund">
+                                <label for="govFund" class="radio-label">Government Fund</label>
+
+                                <input type="radio" name="purpose" value="others" id="others" aria-label="Others">
+                                <label for="others" class="radio-label">Others</label>
+                            </div>
+
+                            <!-- Other Purpose Text Field (Initially hidden) -->
+                            <div class="col-md-6 mt-3 form-group" id="otherPurposeField" style="display:none;">
+                                <input type="text" id="otherPurpose" class="form-control" placeholder="If others please specify">
+                            </div>
+                        </div>
+
+                        <!-- Terms of Payment initially hidden -->
+                        <h6 class="text-start">Term of Payment</h6>
+                        <div class="mb-3" id="termsOfPayment" style="display:none;">
+                          
+                                <div class="col-md-6 d-flex gap-3">
+                                    <input type="radio" name="payment_term" value="advance_payment" id="advancePayment" aria-label="Advance payment">
+                                    <label for="advancePayment" class="radio-label">Advance payment</label>
+
+                                    <input type="radio" name="payment_term" value="final_payment" id="finalPayment" aria-label="Final payment">
+                                    <label for="finalPayment" class="radio-label">Final payment</label>
+                                </div>
+                            
+                        </div>
+
+                        <!-- Declaration No initially hidden -->
+                        <div class="col-md-6 mb-3 form-group" id="declarationNoField" style="display:none;">
+                            <label for="declarationNo" class="form-label">Declaration No</label>
+                            <input type="text" id="declarationNo" class="form-control" placeholder="Enter the Declaration No">
+                        </div>
+
+                        <hr class="custom-hr">
+
+                        <!-- Receiver Details Section -->
+                        <h6>Receiver Details</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="accountNumberReceiver" class="form-label">Account Number</label>
+                                <input type="text" id="accountNumberReceiver" class="form-control" placeholder="Enter saving account number" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="nameReceiver" class="form-label">Name</label>
+                                <input type="text" id="nameReceiver" class="form-control" placeholder="Enter name of the account holder" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="bankNameReceiver" class="form-label">Name of the Bank</label>
+                                <input type="text" id="bankNameReceiver" class="form-control" placeholder="Enter name of the Bank" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="branchNameReceiver" class="form-label">Branch Name</label>
+                                <input type="text" id="branchNameReceiver" class="form-control" placeholder="Enter name of the Branch" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3 form-group">
+                            <label for="ifscCodeReceiver" class="form-label">IFSC CODE</label>
+                            <input type="text" id="ifscCodeReceiver" name="ifscCodeReceiver" required>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="submit-btn btn btn-primary">Submit Form</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-4 py-4 footer-custom">
+        <div class="container">
+            <p>&copy; 2024 <a href="#" class="text-decoration-none" style="color: #00A7E3;">Bank of Bhutan</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        // Helper function to show success message
+        function showSuccess(message) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            successMessage.style.top = '20px';
+            setTimeout(() => {
+                successMessage.style.top = '-100px'; 
+            }, 5000);
+        }
+    
+        // Helper function to show error message
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            errorMessage.style.top = '20px';
+            setTimeout(() => {
+                errorMessage.style.top = '-100px'; 
+            }, 5000);
+        }
+    
+        // Additional code for showing/hiding fields based on selections
+        document.querySelectorAll('input[name="purpose"]').forEach(radio => {
+            radio.addEventListener('click', function () {
+                if (this.value === 'bill_payment') {
+                    document.getElementById('termsOfPayment').style.display = 'block';
+                } else {
+                    document.getElementById('termsOfPayment').style.display = 'none';
+                    document.getElementById('declarationNoField').style.display = 'none';
+                }
+    
+                if (this.value === 'others') {
+                    document.getElementById('otherPurposeField').style.display = 'block';
+                } else {
+                    document.getElementById('otherPurposeField').style.display = 'none';
+                }
+            });
+        });
+    
+        // Show Declaration No. only when Final Payment is selected
+        document.getElementById('finalPayment').addEventListener('click', function () {
+            document.getElementById('declarationNoField').style.display = 'block';
+        });
+    
+        // Hide Declaration No. when Advance Payment is selected
+        document.getElementById('advancePayment').addEventListener('click', function () {
+            document.getElementById('declarationNoField').style.display = 'none';
+        });
+    
+        // Handle close button functionality (redirect to home)
+        document.querySelector('.btn-close').addEventListener('click', function () {
+            window.location.href = '/Token.html';
+        });
+    
+        // Form submission handling
+        document.getElementById('rtgsForm').addEventListener('submit', async function (event) {
+            event.preventDefault();  // Prevent the default form submission
+    
+            // Gather form data
+            const email = document.getElementById('email').value.trim();
+            const accountNumberDepositor = document.getElementById('accountNumberDepositor').value.trim();
+            const nameDepositor = document.getElementById('nameDepositor').value.trim();
+            const amountDepositor = document.getElementById('amountDepositor').value.trim();
+            const phoneDepositor = document.getElementById('phoneDepositor').value.trim();
+            const licenseDepositor = document.getElementById('licenseDepositor').value.trim();
+            const accountNumberReceiver = document.getElementById('accountNumberReceiver').value.trim();
+            const nameReceiver = document.getElementById('nameReceiver').value.trim();
+            const bankNameReceiver = document.getElementById('bankNameReceiver').value.trim();
+            const branchNameReceiver = document.getElementById('branchNameReceiver').value.trim();
+            const ifscCodeReceiver = document.getElementById('ifscCodeReceiver').value.trim();
+            const purpose = document.querySelector('input[name="purpose"]:checked');
+            const otherPurpose = document.getElementById('otherPurpose').value.trim();
+            const paymentTerm = document.querySelector('input[name="payment_term"]:checked') ? document.querySelector('input[name="payment_term"]:checked').value : null;
+            const declarationNo = document.getElementById('declarationNo').value.trim();
+    
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+    
+            // Reset previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+    
+            // Form validation
+            if (!/^\d{9}$/.test(accountNumberDepositor)) {
+                showError('Depositor account number must be exactly 9 digits.');
+                return;
+            }
+    
+            if (!/^[A-Za-z\s]+$/.test(nameDepositor)) {
+                showError('Depositor name should contain only alphabets.');
+                return;
+            }
+    
+            if (!/^\d+(\.\d+)?$/.test(amountDepositor) || Number(amountDepositor) <= 0) {
+                showError('Amount must be a positive number.');
+                return;
+            }
+    
+            if (!/^(17|77)\d{6}$/.test(phoneDepositor)) {
+                showError('Phone number must start with 17 or 77 and be exactly 8 digits.');
+                return;
+            }
+    
+            if (!/^\d{11}$/.test(licenseDepositor)) {
+                showError('License or CID number must be exactly 11 digits.');
+                return;
+            }
+    
+            if (!/^\d+$/.test(accountNumberReceiver)) {
+                showError('Receiver account number must be a positive number.');
+                return;
+            }
+    
+            if (!/^[A-Za-z\s]+$/.test(nameReceiver)) {
+                showError('Receiver name should contain only alphabets.');
+                return;
+            }
+    
+            if (!/^[A-Za-z\s]+$/.test(bankNameReceiver)) {
+                showError('Bank name should contain only alphabets.');
+                return;
+            }
+    
+            if (!/^[A-Za-z\s]+$/.test(branchNameReceiver)) {
+                showError('Branch name should contain only alphabets.');
+                return;
+            }
+    
+            if (!ifscCodeReceiver) {
+                showError('IFSC code is required.');
+                return;
+            }
+
+    
+            if (!purpose) {
+                showError('Please select a purpose for the transaction.');
+                return;
+            }
+    
+            if (purpose.value === 'bill_payment' && !paymentTerm) {
+                showError('Please select a payment term (Advance or Final) for bill payment.');
+                return;
+            }
+    
+            if (purpose.value === 'bill_payment' && paymentTerm === 'final' && declarationNo === '') {
+                showError('Declaration number is required for Final Payment.');
+                return;
+            }
+    
+            // If all validations pass, proceed with submission
+            const formData = {
+                email,
+                accountNumberDepositor,
+                nameDepositor,
+                amountDepositor,
+                phoneDepositor,
+                licenseDepositor,
+                accountNumberReceiver,
+                nameReceiver,
+                bankNameReceiver,
+                branchNameReceiver,
+                ifscCodeReceiver,
+                purpose: purpose.value,
+                otherPurpose,
+                paymentTerm,
+                declarationNo,
+                service: 'RTGS',
+            };
+    
+            try {
+                console.log('Submitting form data:', formData); 
+                const response = await fetch('ttps://bankofbhutan.onrender.com/api/v1/customer/submit-rtgs', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+    
+                const result = await response.json();
+                console.log('API Response:', result);
+    
+                if (response.ok) {
+                    showSuccess('RTGS form submitted successfully!');
+                    setTimeout(() => {
+                        window.location.href = `Email.html?service=RTGS`;  
+                    }, 5000);
+                } else {
+                    console.log('Error:', result.message);
+                    showError('Error: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                showError('An error occurred while submitting the form. Please try again.');
+            }
+        });
+    </script>
+     <script>
+          window.onload = function() {
+            const tokenNumber = localStorage.getItem('storedToken');
+            if (tokenNumber) {
+                document.getElementById('tokenNumber').value = tokenNumber;
+            } else {
+                alert('No token found in cache. Please get a new token.');
+            }
+        };
+     </script>
+    
+
+    
+    
+</body>
+</html>
