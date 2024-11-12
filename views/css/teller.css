@@ -1,3 +1,4 @@
+/* Reset some default margins and paddings */
 body,
 h1,
 h2,
@@ -7,57 +8,14 @@ p {
 	margin: 0;
 	padding: 0;
 	font-family: "Open Sans", sans-serif;
+	
 }
 
 body {
 	background-color: #f4f7fa;
 }
 
-/* Container holds the main structure */
-.container {
-	position: relative;
-	width: 100%;
-	height: 100vh; /* Full viewport height */
-	flex-direction: column;
-	align-items: flex-start;
 
-	font-family: Arial, sans-serif;
-}
-
-.operations button {
-	margin-right: 10px; /* Spacing between buttons */
-	padding: 8px 12px;
-	background-color: #4caf50; /* Button color */
-	color: white;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: 14px;
-}
-
-.operations button:hover {
-	background-color: #45a049; /* Hover color */
-}
-
-/* Main content or image display area */
-.main-content {
-	margin-top: 50px; /* Create space for the buttons at the top */
-	width: 100%;
-	height: calc(100% - 50px); /* Adjust height after margin */
-	background-color: #f3f3f3; /* Background color of main area */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-/* Example image styling */
-.image-display {
-	max-width: 100%;
-	max-height: 100%;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
 
 .container-fluid .header-container {
 	background-color: white;
@@ -72,12 +30,10 @@ body {
 	min-height: 100vh;
 	box-shadow: 0 0 10px rgba(31, 32, 32, 0.5); /* Dark shadow */
 	background-color: #fff; /* Background color of the sidebar */
-}
-
-.main {
+  }
+.main{
 	padding-right: 250px;
 }
-
 .sidebar p {
 	text-align: left;
 	font-weight: 600;
@@ -93,6 +49,7 @@ h2 {
 	font-weight: 700;
 	font-size: 1.8rem;
 }
+
 
 .header-container .col-auto p {
 	font-size: 1rem;
@@ -114,6 +71,10 @@ h2 {
 
 .text-danger {
 	color: #dc3545;
+}
+
+.text-primary {
+	color: #007bff;
 }
 
 .table tbody tr td {
@@ -181,6 +142,8 @@ h5 {
 .p-4 {
 	padding: 1.5rem !important;
 }
+
+
 
 /* Header adjustments */
 .header-container h2 {
@@ -264,12 +227,14 @@ h5 {
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
+	
 }
 
-/* Start For token Infromation */
+/*Start For token Infromation */
 .tokeninfo {
 	display: flex;
-	justify-content: space-between; /* Align content vertically */
+	justify-content: space-between;/* Align content vertically */
+	
 	gap: 0.6vh; /* Small gap between columns */
 }
 
@@ -277,7 +242,7 @@ h5 {
 	border: 1px solid #ddd; /* Adds a light border */
 	padding: 8px; /* Reduce padding for a smaller size */
 	border-radius: 2px; /* Optional: Adds slight rounding to corners */
-	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.5); /* Optional: Adds slight shadow */
+	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.50); /* Optional: Adds slight shadow */
 	width: 39vh; /* Set a fixed width for smaller boxes */
 	height: 12vh; /* Set a fixed height */
 	display: flex;
@@ -299,29 +264,31 @@ h5 {
 .tokeninfo .col-md-3 span.fs-2 {
 	font-size: 1.5rem; /* Make the token number slightly smaller */
 }
-
 .tokeninfo .col-md-3 span {
 	color: #00a7e3; /* Sets the text color to #00A7E3 */
 	font-size: 20px;
 }
 
-/* End For token Infromation */
+/*End  For token Infromation */
 
 /* Start of token list and operation */
 .tokenLiOp {
 	display: flex;
 	gap: 0.6vh;
 	justify-content: space-between;
-}
+	
 
+
+
+}
 .tokenLiOp .tokenlist {
 	border: 1px solid #ddd; /* Adds a light border */
 	background-color: white;
 	border-radius: 5px;
 	height: auto;
 	/* padding: 9vh ; */
+	
 }
-
 .tokenLiOp .tokenOp {
 	border: 1px solid #ddd; /* Adds a light border */
 	background-color: white;
@@ -329,16 +296,16 @@ h5 {
 	/* padding-left: 4vh; */
 	/* padding-top: 3vh; */
 	height: auto;
+	
 }
 
 /* End of token list and operation */
 
 /* Start Token list styling */
-.tokenlist h4 {
+.tokenlist h4{
 	color: #858585;
 	font-weight: 800;
 }
-
 .tokenlist .table thead th {
 	background-color: #00a7e3; /* Set the background color */
 	color: white; /* Set the text color to white */
@@ -348,6 +315,7 @@ h5 {
 .tokenlist table tbody td {
 	text-align: center; /* Center-align the text in tbody */
 	color: rgba(102, 102, 102, 0.8); /* Set the text color to 70% opacity */
+
 	font-weight: 600;
 }
 
@@ -372,7 +340,7 @@ h5 {
 	width: 38.5vh;
 	
 } */
-.tokenOp h4 {
+.tokenOp h4{
 	color: #858585;
 	font-weight: 800;
 }
@@ -383,7 +351,9 @@ h5 {
 	display: flex;
 	width: 28vh;
 	margin-bottom: -1vh;
+	
 	border-radius: 5px;
+	
 	align-items: center;
 	background-color: #00a7e3;
 	justify-content: space-between;
@@ -414,7 +384,6 @@ h5 {
 	border-radius: 5px;
 	min-width: 80px;
 }
-
 /* end timer */
 
 /* Star of Token main Operation */
@@ -422,9 +391,9 @@ h5 {
 .mainOp .btn {
 	border-radius: 5px; /* Rounded corners for buttons */
 	color: white;
+
 	padding: 2px; /* Adjust padding for button content */
 }
-
 .mainOp .btn i {
 	font-size: 2.25rem; /* Size of the icon */
 	margin-bottom: 5px; /* Adds space between the icon and text */
@@ -435,31 +404,29 @@ h5 {
 }
 
 .mainOp .break {
-	background-color: #00a7e3; /* Warning button color */
+	background-color: #00a7e3;  /* Warning button color */
 }
 
 .mainOp .repeat {
-	background-color: #00a7e3; /* Danger button color */
+	background-color: #00a7e3;  /* Danger button color */
 }
 
 .mainOp .requeue {
-	background-color: #00a7e3;
+	background-color: #00a7e3; 
 }
 
 .mainOp .skip {
-	background-color: #00a7e3;
+	background-color: #00a7e3; 
 }
 
 .mainOp .back {
-	background-color: #00a7e3;
+	background-color: #00a7e3; 
 }
-
 .mainOp .counter {
-	background-color: #00a7e3;
+	background-color: #00a7e3; 
 }
-
 .mainOp .service {
-	background-color: #00a7e3;
+	background-color: #00a7e3; 
 }
 
 .mainOp .btn-lg {
@@ -475,86 +442,124 @@ h5 {
 
 /* Next Token Button */
 .mainOp .next:hover {
-	background-color: #28a745; /* Green on hover */
+    background-color: #28a745; /* Green on hover */
 }
 
 /* Short Break Button */
 .mainOp .break:hover {
-	background-color: #557a95; /* Lighter navy blue on hover */
+    background-color: #557A95; /* Lighter navy blue on hover */
 }
 
 /* Repeat Token Button */
 .mainOp .repeat:hover {
-	background-color: #888888; /* Lighter gray on hover */
+    background-color: #888888; /* Lighter gray on hover */
 }
 
 /* Requeue Token Button */
 .mainOp .requeue:hover {
-	background-color: #ffff55; /* Success button color */
+    background-color: #ffff55; /* Success button color */
 	color: #00a7e3;
 }
 
 /* Skip Token Button */
 .mainOp .skip:hover {
-	background-color: #ff8080; /* Lighter red on hover */
+    background-color: #ff8080; /* Lighter red on hover */
 }
 
 /* Backward Token Button */
 .mainOp .back:hover {
-	background-color: #138496; /* Darker teal on hover */
+    background-color: #138496; /* Darker teal on hover */
 }
 
 /* Forward to Other Counter Button */
 .mainOp .counter:hover {
-	background-color: #5643ff; /* Lighter purple on hover */
+    background-color: #5643ff; /* Lighter purple on hover */
 }
 
 /* Forward to Other Service Button */
 .mainOp .service:hover {
-	background-color: #e8cfff; /* Lighter purple on hover */
+    background-color: #e8cfff; /* Lighter purple on hover */
 }
 
 /* Star of Token Operation */
 
-.operator {
-	display: flex;
-	/* gap: 0.6vh; Adjust the gap between columns */
-	justify-content: space-between;
-	align-items: stretch; /* Ensures columns stretch to equal height */
+
+@media (max-width: 767.98px) {
+	.header-container .col-auto p {
+		text-align: center;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.btn-lg {
+		font-size: 1rem;
+		padding: 10px 20px;
+	}
+
+	.fs-2 {
+		font-size: 1.5rem;
+	}
+
+	.table thead th {
+		font-size: 0.9rem;
+	}
+
+	.table tbody td {
+		font-size: 0.9rem;
+	}
+	
 }
 
-.form h4 {
+
+
+
+
+.operator {
+    display: flex;
+    /* gap: 0.6vh; Adjust the gap between columns */
+    justify-content: space-between;
+    align-items: stretch; /* Ensures columns stretch to equal height */
+}
+
+.form,
+.operations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form h4{
 	color: #858585;
 	font-weight: 800;
 }
-
-.operations h4 {
+.operations h4{
 	color: #858585;
 	font-weight: 800;
 }
-
-/* Start For token Infromation */
+/*Start For token Infromation */
 .operator {
 	display: flex;
-	justify-content: space-between; /* Align content vertically */
+	justify-content: space-between;/* Align content vertically */
+	
 	/* gap: 0.6vh; */
 }
 
-.operator .operations {
+.operator .col-md-3 {
 	border: 1px solid #ddd; /* Adds a light border */
 	border-radius: 2px; /* Optional: Adds slight rounding to corners */
-	box-shadow: 0 1px 5px rgba (129, 35, 245, 0.5); /* Optional: Adds slight shadow */
-	width: 39vh;
-	height: auto;
+	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.50); /* Optional: Adds slight shadow */
+	width: 24%; 
+	height: auto; 
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start; /* Align content vertically */
+	justify-content: space-between; /* Align content vertically */
 }
-
-.operator .form {
+.operator .col-md-9 {
 	border: 1px solid #ddd; /* Adds a light border */
 	border-radius: 2px; /* Optional: Adds slight rounding to corners */
-	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.5); /* Optional: Adds slight shadow */
+	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.50); /* Optional: Adds slight shadow */
 	width: 76%;
 	/* height: 12vh; Set a fixed height */
 	margin: 0;
@@ -562,7 +567,6 @@ h5 {
 	flex-direction: column;
 	justify-content: space-between; /* Align content vertically */
 }
-
 .operator .col-md-3 h5 {
 	margin-bottom: 5px; /* Reduce margin below the heading */
 	font-size: 16px; /* Smaller font size for headings */
@@ -577,7 +581,6 @@ h5 {
 .operator .col-md-3 span.fs-2 {
 	font-size: 1.5rem; /* Make the token number slightly smaller */
 }
-
 .operator .col-md-3 span {
 	color: #00a7e3; /* Sets the text color to #00A7E3 */
 	font-size: 20px;
@@ -587,16 +590,16 @@ h5 {
 	display: flex;
 	gap: 0.6vh;
 	justify-content: space-between;
-}
+	}
 
 .operations .tokenlist {
 	border: 1px solid #ddd; /* Adds a light border */
 	background-color: white;
 	border-radius: 5px;
 	height: auto;
-	padding: 9vh;
+	padding: 9vh ;
+	
 }
-
 .operations .tokenOp {
 	border: 1px solid #ddd; /* Adds a light border */
 	background-color: white;
@@ -604,118 +607,117 @@ h5 {
 	padding-left: 4vh;
 	padding-top: 3vh;
 	height: auto;
+	
 }
 
 /* .withdrawal-form */
 
 .withdrawal-form {
-	margin-top: 0px !important;
-	border: 1px solid #00a7e3 !important;
-	padding: 20px !important;
-	border-radius: 5px !important;
-	font-family: Arial, sans-serif !important;
+    margin-top: 0px !important;
+    border: 1px solid #00a7e3 !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    font-family: Arial, sans-serif !important;
 }
 
+
 /* .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 } */
 
 .bank-logo p {
-	font-size: 14px;
-	margin: 0;
-	line-height: 1.2;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .branch-info {
-	text-align: right;
+    text-align: right;
 }
 
 .branch-info p {
-	margin: 0;
-	font-size: 14px;
+    margin: 0;
+    font-size: 14px;
 }
 
 .withdrawal-info {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .withdrawal-info p {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 .withdrawal-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
 .withdrawal-table td {
-	padding: 10px;
-	border: 1px solid #00a7e3;
+    padding: 10px;
+    border: 1px solid #00a7e3;
 }
 
 .signature-section {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .signature-table {
-	width: 100%;
-	border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .signature-table td {
-	padding: 10px;
-	font-size: 14px;
+    padding: 10px;
+    font-size: 14px;
 }
 
 strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 
-.col-md-6 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-}
 
-#legend {
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	background-color: #ffffff;
-	padding: 10px;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+        .clickable-row {
+            cursor: pointer;
+        }
 
-.legend-item {
-	display: flex;
-	align-items: center;
-	margin-bottom: 5px;
-}
+        .clickable-row:hover {
+            background-color: #f0f0f0;
+        }
+  
+        .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        #legend {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color-box {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+        }
 
-.legend-color-box {
-	width: 15px;
-	height: 15px;
-	margin-right: 8px;
-}
-
-.clickable-row {
-	cursor: pointer;
-}
-
-.clickable-row:hover {
-	background-color: #f0f0f0;
-}
-
-/* responsivepart */
 
 /* Modal container */
 .modal {
@@ -725,7 +727,7 @@ strong {
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 100vh; /* Full height */
     background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
 }
 
@@ -813,426 +815,37 @@ select {
 .modal-content form button.btn-call:hover {
     background-color: #0dcaf0;
 }
-@media (max-width: 767.98px) {
-	.header-container .col-auto p {
-		text-align: center;
-	}
-
-	h2 {
-		font-size: 1.5rem;
-	}
-
-	.btn-lg {
-		font-size: 1rem;
-		padding: 10px 20px;
-	}
-
-	.fs-2 {
-		font-size: 1.5rem;
-	}
-
-	.table thead th {
-		font-size: 0.9rem;
-	}
-
-	.table tbody td {
-		font-size: 0.9rem;
-	}
-}
-
-@media (max-width: 575.98px) {
-	.header-container .col-auto p {
-		text-align: center;
-		font-size: 0.8rem;
-	}
-
-	h2 {
-		font-size: 1.3rem;
-	}
-
-	.btn-lg {
-		font-size: 0.9rem;
-		padding: 8px 15px;
-	}
-
-	.fs-2 {
-		font-size: 1.2rem;
-	}
-
-	.sidebar {
-		width: 100%; /* Full width sidebar */
-		min-height: auto;
-		position: relative;
-		box-shadow: none;
-	}
-
-	.tokeninfo .tokenOp {
-		width: 100%;
-		margin-bottom: 10px;
-	}
-
-	.operations {
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.main-content {
-		margin-top: 80px;
-		height: auto;
-	}
-}
-
-@media (max-width: 767.98px) {
-	h2 {
-		font-size: 1.5rem;
-	}
-
-	.sidebar {
-		width: 100%;
-		padding: 10px;
-	}
-
-	.tokeninfo .tokenOp {
-		width: 48%;
-		margin-bottom: 10px;
-	}
-
-	.operations-panel {
-		flex-direction: column;
-	}
-
-	.main-content {
-		margin-top: 60px;
-		padding: 15px;
-	}
-
-	.tokenLiOp {
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	#timer {
-		width: 100%;
-	}
-}
-
-@media (max-width: 991.98px) {
-	h2 {
-		font-size: 1.8rem;
-	}
-
-	.sidebar {
-		width: 200px;
-	}
-
-	.btn-lg {
-		font-size: 1rem;
-		padding: 10px 20px;
-	}
-
-	.tokeninfo .tokenOp {
-		width: 32%;
-	}
-
-	.operations {
-		gap: 0.8rem;
-	}
-
+@media (max-width: 1450px) {
 	.mainOp .btn-lg {
-		height: 8vh;
+		height: auto !important;
+		width: 130% !important;
 	}
-
-	.tokenlist h4 {
-		font-size: 1.1rem;
-	}
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-	h2 {
-		font-size: 2rem; /* Large headers for better readability */
-	}
-
-	.sidebar {
-		width: 220px; /* Slightly smaller sidebar */
-		padding: 15px;
-		box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* Light shadow for distinction */
-	}
-
-	.tokeninfo .tokenOp {
-		width: 30%; /* Three columns on laptops */
-	}
-
-	.btn-lg {
-		font-size: 1.1rem;
-		padding: 12px 24px;
-	}
-
-	.operations-panel {
-		gap: 1rem;
-	}
-
-	.main-content {
-		margin-left: 220px; /* Adjust margin for sidebar */
-		padding: 20px;
-	}
-
-	.tokenLiOp {
-		flex-direction: row; /* Row layout for laptops */
-		gap: 2rem;
-	}
-
-	#timer {
-		width: 50%; /* Half-width timer for centered appearance */
+	.mainOp{
+		width: 100% !important;
 	}
 }
-
-@media (max-width: 1460px) and (min-width: 1366px) {
-	.tokeninfo .tokenOp {
-		width: 32vh; /* Slightly increase width */
-		height: 12vh; /* Increase height */
-	}
-
-	.tokeninfo {
-		margin-left: 30px;
-		margin-right: 5px;
-	}
-
-	#pieChart {
-		width: 80%;
-		margin-top: 20px;
-	}
-
-	.operator .operations {
-		width: 32vh;
-	}
-
-	#timer {
-		width: 21vh;
-	}
-
-	#timer h2 {
-		font-size: 2rem;
-		padding-left: 1vh;
-	}
-
-	.sidebar {
-		width: 17%;
-	}
-
-	.mainOp .d-grid {
-		width: 8.5vh;
-		margin-left: 15px;
-	}
-
+@media (max-width: 1301px) {
 	.mainOp .btn-lg {
-		height: 14vh;
+		height: auto !important;
+		width: 130% !important;
+	}
+	.mainOp{
+		width: 100% !important;
 	}
 }
-
-@media (max-width: 1366px) and (min-width: 1270px) {
-	.tokeninfo .tokenOp {
-		width: 27vh; /* Slightly increase width */
-		height: 13vh; /* Increase height */
-	}
-	.tokenLiOp {
-		padding-left: 44px;
-		padding-right: 16px;
-	}
+@media (max-width: 1200px) {
 	.tokeninfo .col-md-3 {
-		width: 39vh;
-		height: 15vh;
-	}
-
-	.tokeninfo {
-		margin-left: 30px;
-		margin-right: 5px;
-	}
-
-	#pieChart {
-		width: 75%;
-		margin-top: 50px;
-		margin-right: 10px;
-	}
-
-	#legend {
-		height: 30%;
-		margin-top: 30px;
-	}
-
-	.sidebar {
-		width: 17%;
-	}
-	.operator {
-		padding-left: 44px;
-		padding-right: 16px;
-	}
-	.operator .form {
-		width: 76%;
-	}
-
-	.operator .operations {
-		width: 24%;
-	}
-
-	#timer {
-		width: 27vh;
-	}
-
-	#timer h2 {
-		font-size: 1.75rem;
-		padding-left: 1vh;
-	}
-
-	.mainOp .btn-lg {
-		height: 15vh;
-		width: 90%;
-		font-size: 11px;
-
-		margin-left: 15px;
-	}
-	.mainOp .btn i {
-		font-size: 1.75rem;
-		margin-bottom: 5px;
-	}
-	.mainOp .button-grid2 {
-		margin-left: 18px;
+		width: 48vh;
 	}
 }
-
-@media (max-width: 1170px) and (min-width: 1107px) {
-	.tokeninfo .tokenOp {
-		width: 20vh; /* Slightly increase width */
-		height: 12vh; /* Increase height */
+@media (max-width: 1100px) {
+	.tokeninfo .col-md-3 {
+		width: 48vh;
 	}
-
-	.tokeninfo {
-		margin-left: 30px;
-		margin-right: 5px;
+	.tokenLiOp .tokenlist{
+		width: 100% !important;
 	}
-
-	#pieChart {
-		width: 75%;
-		margin-top: 80px;
-		margin-right: 30px;
-	}
-
-	#legend {
-		height: 30%;
-		margin-top: 50px;
-	}
-
-	.tokeninfo .col-md-3 h5 {
-		font-size: 13px;
-	}
-
-	.tokeninfo .col-md-3 span.fs-2 {
-		font-size: 0.5rem;
-	}
-
-	.sidebar {
-		width: 20%;
-	}
-
-	.operator .operations {
-		width: 24vh;
-	}
-
-	#timer {
-		width: 18vh;
-	}
-
-	#timer h2 {
-		font-size: 1.75rem;
-		padding-left: 1vh;
-	}
-
-	.mainOp {
-		height: 5;
-	}
-
-	.mainOp .d-grid {
-		width: 7.5vh;
-		margin-left: 15px;
-	}
-
-	.mainOp .btn-lg {
-		height: 12vh;
-	}
-
-	#timer .fa-stopwatch {
-		padding-left: 1vh;
-	}
-
-	#timer p {
-		padding-left: 1vh;
-	}
-}
-
-@media (max-width: 1106px) and (min-width: 1100px) {
-	.tokeninfo .tokenOp {
-		width: 16vh; /* Slightly increase width */
-		height: 12vh; /* Increase height */
-	}
-
-	.tokeninfo {
-		margin-left: 30px;
-		margin-right: 5px;
-	}
-
-	#pieChart {
-		width: 75%;
-		margin-top: 80px;
-		margin-right: 30px;
-	}
-
-	#legend {
-		height: 30%;
-		margin-top: 50px;
-	}
-
-	.tokeninfo .col-md-3 h5 {
-		font-size: 13px;
-	}
-
-	.tokeninfo .col-md-3 span.fs-2 {
-		font-size: 0.5rem;
-	}
-
-	.sidebar {
-		width: 20%;
-	}
-
-	.operator .operations {
-		width: 24vh;
-	}
-
-	#timer {
-		width: 18vh;
-	}
-
-	#timer h2 {
-		font-size: 1.75rem;
-		padding-left: 1vh;
-	}
-
-	.mainOp {
-		height: 5;
-	}
-
-	.mainOp .d-grid {
-		width: 7.5vh;
-		margin-left: 15px;
-	}
-
-	.mainOp .btn-lg {
-		height: 12vh;
-	}
-
-	#timer .fa-stopwatch {
-		padding-left: 1vh;
-	}
-
-	#timer p {
-		padding-left: 1vh;
+	.tokenLiOp .tokenOp{
+		width: 100% !important;
 	}
 }
