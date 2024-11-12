@@ -1,4 +1,5 @@
 import { fetchTellerDetails } from './tellerService.js';
+import { customAlert, customConfirm } from './alert.js';
 
 
 document.getElementById('breakButton').addEventListener('click', async () => {
@@ -26,14 +27,14 @@ document.getElementById('breakButton').addEventListener('click', async () => {
       const result = await response.json();
       if (response.ok) {
 
-        alert(result.message); // Display success message
+        customAlert(result.message); // Display success message
         document.getElementById('form-container').innerHTML = '<p></p>';
         window.location.reload();
       } else {
-        alert(`Error: ${result.error || result.message}`); // Display error message
+        customAlert(`Error: ${result.error || result.message}`); // Display error message
       }
     } catch (error) {
-      alert('Failed to complete token.');
+      customAlert('Failed to complete token.');
     }
   });
   
