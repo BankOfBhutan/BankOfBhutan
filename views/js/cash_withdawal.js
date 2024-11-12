@@ -33,7 +33,7 @@ function errorshowModal(message) {
 }
 const cash_withdrawal = async (service, Name,email, accountNumber, amount,contact, withdrawalDate ,WithdrawalTime)=>{
     try {
-        const conflictCheck = await axios.post('http://localhost:4001/api/v1/withdrawals/check_Conflict',{email,withdrawalDate,WithdrawalTime});
+        const conflictCheck = await axios.post('https://bankofbhutan-w3qb.onrender.com/api/v1/withdrawals/check_Conflict',{email,withdrawalDate,WithdrawalTime});
 
         if (conflictCheck.data.conflict) {
             errorshowModal(conflictCheck.data.message);
