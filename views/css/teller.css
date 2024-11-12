@@ -1,0 +1,800 @@
+/* Reset some default margins and paddings */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	
+}
+
+body {
+	background-color: #f4f7fa;
+}
+
+
+#modalprofile .modal-content {
+    height: 80vh; /* 80% of the viewport height */
+    overflow-y: auto; /* Adds scrolling if content exceeds height */
+}
+.container-fluid .header-container {
+	background-color: white;
+	/* border-bottom: 1px solid #ddd; */
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px; /* Adjust width as needed */
+	min-height: 100vh;
+	box-shadow: 0 0 10px rgba(31, 32, 32, 0.5); /* Dark shadow */
+	background-color: #fff; /* Background color of the sidebar */
+  }
+.main{
+	padding-right: 250px;
+}
+.sidebar p {
+	text-align: left;
+	font-weight: 600;
+	color: rgba(51, 51, 51, 0.75);
+}
+
+.logo {
+	max-height: 80px;
+}
+
+h2 {
+	color: #333;
+	font-weight: 700;
+	font-size: 1.8rem;
+}
+
+
+.header-container .col-auto p {
+	font-size: 1rem;
+	color: #666;
+	line-height: 1.3;
+}
+
+.bg-light {
+	background-color: #f9f9f9;
+}
+
+.text-primary {
+	color: #00a7e3;
+}
+
+.text-success {
+	color: #28a745;
+}
+
+.text-danger {
+	color: #dc3545;
+}
+
+.text-primary {
+	color: #007bff;
+}
+
+.table tbody tr td {
+	vertical-align: middle;
+}
+
+.fs-2 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+h5 {
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.btn-lg {
+	padding: 15px 25px;
+	font-size: 1.1rem;
+}
+
+.d-grid {
+	grid-gap: 20px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.footer-custom {
+	text-align: center;
+	color: #666;
+	background-color: #f9f9f9;
+}
+
+.footer-custom a {
+	color: #00a7e3;
+	text-decoration: none;
+}
+
+.footer-custom p {
+	font-size: 0.9rem;
+}
+
+.row-full-height {
+	height: 100%;
+}
+
+.blue-background {
+	background-color: white;
+}
+
+.border-flat {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+.p-3 {
+	padding: 1rem !important;
+}
+
+.p-4 {
+	padding: 1.5rem !important;
+}
+
+
+
+/* Header adjustments */
+.header-container h2 {
+	font-size: 2.4rem; /* Increase header font size */
+	padding: 20px 0; /* Add padding for spacing */
+}
+
+.header-container .col-auto p {
+	font-size: 1.2rem;
+	margin-top: -10px; /* Adjust date and time alignment */
+}
+
+/* Token status boxes adjustments */
+.token-status-box {
+	padding: 1rem;
+	width: 150px; /* Reduce width of boxes */
+	margin: 0 15px; /* Increase horizontal spacing */
+}
+
+.token-status-box .fs-2 {
+	font-size: 3rem; /* Increase token number font size */
+}
+
+/* Token Table adjustments */
+.table-bordered th,
+.table-bordered td {
+	padding: 15px 20px; /* Add more padding */
+	border: 2px solid #dde; /* Add a lighter border */
+}
+
+.table-bordered tbody tr {
+	background-color: #f9f9f9; /* Light background for each row */
+	border-radius: 5px;
+}
+
+/* Operations buttons adjustments */
+.operations-panel button {
+	padding: 10px 20px; /* Decrease padding */
+	border-radius: 4px; /* Make buttons sharper */
+	flex-grow: 1; /* Make sure the buttons stretch and occupy equal height */
+}
+
+.operations-panel #timer {
+	width: 100%; /* Reduce width of the timer box */
+	text-align: center;
+}
+
+/* Ensure the row stretches both columns to the same height */
+.row.justify-content-between.d-flex.align-items-stretch {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	min-height: 100%;
+}
+
+/* Make sure each column stretches to the full height */
+.col-md-8,
+.col-md-4 {
+	display: flex;
+	flex-direction: column;
+}
+
+.operations-panel {
+	justify-content: space-between; /* Ensure equal spacing between the operations */
+}
+
+.d-grid {
+	flex-grow: 1; /* Make sure the buttons section takes up the available space */
+	display: flex;
+	flex-direction: column;
+}
+
+.table-bordered th,
+.table-bordered td {
+	padding: 15px 20px; /* Add more padding */
+	border: 2px solid #dde; /* Add a lighter border */
+}
+
+/* Flexbox alignment for Operations and Tokens */
+.flex-equal-height {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	
+}
+
+/*Start For token Infromation */
+.tokeninfo {
+	display: flex;
+	justify-content: space-between;/* Align content vertically */
+	
+	gap: 0.6vh; /* Small gap between columns */
+}
+
+.tokeninfo .col-md-3 {
+	border: 1px solid #ddd; /* Adds a light border */
+	padding: 8px; /* Reduce padding for a smaller size */
+	border-radius: 2px; /* Optional: Adds slight rounding to corners */
+	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.50); /* Optional: Adds slight shadow */
+	width: 39vh; /* Set a fixed width for smaller boxes */
+	height: 12vh; /* Set a fixed height */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Align content vertically */
+}
+
+.tokeninfo .col-md-3 h5 {
+	margin-bottom: 5px; /* Reduce margin below the heading */
+	font-size: 16px; /* Smaller font size for headings */
+	font-weight: 600;
+	color: #858585;
+}
+
+.tokeninfo .col-md-3 .p-3 {
+	padding: 10px 5px; /* Reduce padding inside the boxes */
+}
+
+.tokeninfo .col-md-3 span.fs-2 {
+	font-size: 1.5rem; /* Make the token number slightly smaller */
+}
+.tokeninfo .col-md-3 span {
+	color: #00a7e3; /* Sets the text color to #00A7E3 */
+	font-size: 20px;
+}
+
+/*End  For token Infromation */
+
+/* Start of token list and operation */
+.tokenLiOp {
+	display: flex;
+	gap: 0.6vh;
+	justify-content: space-between;
+	
+
+
+
+}
+.tokenLiOp .tokenlist {
+	border: 1px solid #ddd; /* Adds a light border */
+	background-color: white;
+	border-radius: 5px;
+	height: auto;
+	/* padding: 9vh ; */
+	
+}
+.tokenLiOp .tokenOp {
+	border: 1px solid #ddd; /* Adds a light border */
+	background-color: white;
+	border-radius: 5px;
+	/* padding-left: 4vh; */
+	/* padding-top: 3vh; */
+	height: auto;
+	
+}
+
+/* End of token list and operation */
+
+/* Start Token list styling */
+.tokenlist h4{
+	color: #858585;
+	font-weight: 800;
+}
+.tokenlist .table thead th {
+	background-color: #00a7e3; /* Set the background color */
+	color: white; /* Set the text color to white */
+	text-align: center;
+}
+
+.tokenlist table tbody td {
+	text-align: center; /* Center-align the text in tbody */
+	color: rgba(102, 102, 102, 0.8); /* Set the text color to 70% opacity */
+
+	font-weight: 600;
+}
+
+.tokenlist table {
+	border-collapse: collapse; /* Optional: Ensures cleaner table borders */
+}
+
+.tokenlist table th,
+.tokenlist table td {
+	padding: 12px; /* Optional: Adds padding for better readability */
+}
+
+.tokenlist table tbody tr:hover {
+	background-color: #f2f2f2; /* Optional: Add hover effect for rows */
+}
+
+/* End Token list styling */
+
+/* Star of Token Operation */
+
+/* .tokenOp{
+	width: 38.5vh;
+	
+} */
+.tokenOp h4{
+	color: #858585;
+	font-weight: 800;
+}
+
+/* start timer */
+#timer {
+	margin-left: 13px;
+	display: flex;
+	width: 28vh;
+	margin-bottom: -1vh;
+	
+	border-radius: 5px;
+	
+	align-items: center;
+	background-color: #00a7e3;
+	justify-content: space-between;
+}
+
+#timer .fa-stopwatch {
+	padding-left: 2vh;
+	font-size: 2.2rem; /* Increase icon size */
+}
+
+#timer p {
+	font-size: 0.75rem; /* Adjust font size for "Timer" text */
+	margin: 0;
+	padding-top: 0.5vh;
+	padding-left: 2vh;
+}
+
+#timer h2 {
+	margin: 0;
+	font-size: 2.5rem;
+	padding-right: 4vh;
+	color: #ffffff; /* Time text color */
+}
+
+#timer .border {
+	padding: 10px;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	min-width: 80px;
+}
+/* end timer */
+
+/* Star of Token main Operation */
+
+.mainOp .btn {
+	border-radius: 5px; /* Rounded corners for buttons */
+	color: white;
+
+	padding: 2px; /* Adjust padding for button content */
+}
+.mainOp .btn i {
+	font-size: 2.25rem; /* Size of the icon */
+	margin-bottom: 5px; /* Adds space between the icon and text */
+}
+
+.mainOp .next {
+	background-color: #00a7e3; /* Primary button color */
+}
+
+.mainOp .break {
+	background-color: #00a7e3;  /* Warning button color */
+}
+
+.mainOp .repeat {
+	background-color: #00a7e3;  /* Danger button color */
+}
+
+.mainOp .requeue {
+	background-color: #00a7e3; 
+}
+
+.mainOp .skip {
+	background-color: #00a7e3; 
+}
+
+.mainOp .back {
+	background-color: #00a7e3; 
+}
+.mainOp .counter {
+	background-color: #00a7e3; 
+}
+.mainOp .service {
+	background-color: #00a7e3; 
+}
+
+.mainOp .btn-lg {
+	font-size: 12px; /* Larger font size for buttons */
+	height: 10vh;
+	width: 110%;
+	margin-top: 1vh;
+}
+
+/* Star of Token main Operation */
+
+/* Hover Effects for Buttons */
+
+/* Next Token Button */
+.mainOp .next:hover {
+    background-color: #28a745; /* Green on hover */
+}
+
+/* Short Break Button */
+.mainOp .break:hover {
+    background-color: #557A95; /* Lighter navy blue on hover */
+}
+
+/* Repeat Token Button */
+.mainOp .repeat:hover {
+    background-color: #888888; /* Lighter gray on hover */
+}
+
+/* Requeue Token Button */
+.mainOp .requeue:hover {
+    background-color: #ffff55; /* Success button color */
+	color: #00a7e3;
+}
+
+/* Skip Token Button */
+.mainOp .skip:hover {
+    background-color: #ff8080; /* Lighter red on hover */
+}
+
+/* Backward Token Button */
+.mainOp .back:hover {
+    background-color: #138496; /* Darker teal on hover */
+}
+
+/* Forward to Other Counter Button */
+.mainOp .counter:hover {
+    background-color: #5643ff; /* Lighter purple on hover */
+}
+
+/* Forward to Other Service Button */
+.mainOp .service:hover {
+    background-color: #e8cfff; /* Lighter purple on hover */
+}
+
+/* Star of Token Operation */
+
+
+@media (max-width: 767.98px) {
+	.header-container .col-auto p {
+		text-align: center;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.btn-lg {
+		font-size: 1rem;
+		padding: 10px 20px;
+	}
+
+	.fs-2 {
+		font-size: 1.5rem;
+	}
+
+	.table thead th {
+		font-size: 0.9rem;
+	}
+
+	.table tbody td {
+		font-size: 0.9rem;
+	}
+	
+}
+
+
+
+
+
+.operator {
+    display: flex;
+    /* gap: 0.6vh; Adjust the gap between columns */
+    justify-content: space-between;
+    align-items: stretch; /* Ensures columns stretch to equal height */
+}
+
+.form,
+.operations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form h4{
+	color: #858585;
+	font-weight: 800;
+}
+.operations h4{
+	color: #858585;
+	font-weight: 800;
+}
+/*Start For token Infromation */
+.operator {
+	display: flex;
+	justify-content: space-between;/* Align content vertically */
+	
+	/* gap: 0.6vh; */
+}
+
+.operator .col-md-3 {
+	border: 1px solid #ddd; /* Adds a light border */
+	border-radius: 2px; /* Optional: Adds slight rounding to corners */
+	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.50); /* Optional: Adds slight shadow */
+	width: 39vh; 
+	height: auto; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Align content vertically */
+}
+.operator .col-md-9 {
+	border: 1px solid #ddd; /* Adds a light border */
+	border-radius: 2px; /* Optional: Adds slight rounding to corners */
+	box-shadow: 0 1px 5px rgba(129, 35, 245, 0.50); /* Optional: Adds slight shadow */
+	width: 76%;
+	/* height: 12vh; Set a fixed height */
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Align content vertically */
+}
+.operator .col-md-3 h5 {
+	margin-bottom: 5px; /* Reduce margin below the heading */
+	font-size: 16px; /* Smaller font size for headings */
+	font-weight: 600;
+	color: #858585;
+}
+
+.operator .col-md-3 .p-3 {
+	padding: 10px 5px; /* Reduce padding inside the boxes */
+}
+
+.operator .col-md-3 span.fs-2 {
+	font-size: 1.5rem; /* Make the token number slightly smaller */
+}
+.operator .col-md-3 span {
+	color: #00a7e3; /* Sets the text color to #00A7E3 */
+	font-size: 20px;
+}
+
+.operations {
+	display: flex;
+	gap: 0.6vh;
+	justify-content: space-between;
+	}
+
+.operations .tokenlist {
+	border: 1px solid #ddd; /* Adds a light border */
+	background-color: white;
+	border-radius: 5px;
+	height: auto;
+	padding: 9vh ;
+	
+}
+.operations .tokenOp {
+	border: 1px solid #ddd; /* Adds a light border */
+	background-color: white;
+	border-radius: 5px;
+	padding-left: 4vh;
+	padding-top: 3vh;
+	height: auto;
+	
+}
+
+/* .withdrawal-form */
+
+.withdrawal-form {
+    margin-top: 0px !important;
+    border: 1px solid #00a7e3 !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    font-family: Arial, sans-serif !important;
+}
+
+
+/* .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+} */
+
+.bank-logo p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.branch-info {
+    text-align: right;
+}
+
+.branch-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.withdrawal-info {
+    margin-bottom: 20px;
+}
+
+.withdrawal-info p {
+    font-size: 16px;
+}
+
+.withdrawal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.withdrawal-table td {
+    padding: 10px;
+    border: 1px solid #00a7e3;
+}
+
+.signature-section {
+    margin-top: 20px;
+}
+
+.signature-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.signature-table td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+        .clickable-row {
+            cursor: pointer;
+        }
+
+        .clickable-row:hover {
+            background-color: #f0f0f0;
+        }
+  
+        .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        #legend {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color-box {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+        }
+
+
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center vertically */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.forward-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #00a2e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.forward-btn:hover {
+    background-color: #008ac7;
+}

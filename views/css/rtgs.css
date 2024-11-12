@@ -1,0 +1,104 @@
+.radio_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info1{
+  height: 90vh;
+}
+.monitor{
+  height: auto !important;
+}
+.btn-submit{
+  width: 25%;
+}
+.radio_content{
+    width: 50%;
+}
+.radio{
+    margin-top: 10px;
+    width: 18px;
+    height: 18px;
+    border:1px solid #CED4DA;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input{
+    margin-top: 10px !important;
+}
+.wrd{
+    color: rgba(51, 51, 51, 0.6);
+    font-weight: normal;
+    font-size: 12px;
+}
+.payment{
+    margin-top: 35px !important;
+    display: none; 
+}
+.input_field2{
+    margin-top: 20px;
+}
+
+button{
+    background-color: #00A7E3 !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    border: none;
+    border-radius: 3px !important;
+    width: 95%;
+    height: 42px;
+}
+
+.btns{
+    width: 25%;
+    outline: none !important;
+}
+.btn-submit{
+    background-color: #00A7E3 !important;
+    color: #ffffff !important;
+    border: none;
+}
+.btn-prev {
+    background-color: #ff6347 !important;
+    color: white;
+    border: none;
+  }
+  .btn-next {
+    background-color: #4682b4 !important;
+    color: white;
+    border: none;
+  }
+  .btn-prev:hover, .btn-next:hover,.btn-submit:hover {
+    opacity: 0.8; 
+  }
+  .input_field_for_the_btn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .input_field_for_the_btn1{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; 
+  }
+  .hidden {
+    display: none;
+  }
+  @media (min-height: 860px) {
+    .content{
+      height: auto !important;
+    }
+  }
+  @media (max-height: 700px) {
+    .info1 {
+        height: auto !important;
+    }
+  }
+  @media (min-height: 1000px) {
+    .content1 {
+        height: 94vh !important;
+    }
+  }
