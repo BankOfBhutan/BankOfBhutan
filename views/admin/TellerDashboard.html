@@ -107,32 +107,33 @@
                             </div>
                         </div>
                     </div>
-                    <div id="passwordReset" class="modal justify-content-center align-items-center">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h2>Password Reset</h2>
+                    <!-- Modal -->
+                <div id="passwordReset" class="modal justify-content-center align-items-center">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Password Reset</h2>
+                        
+                        <!-- Alert Box for Messages -->
+                        
+                        <form>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Email" readonly>
                             
-                            <!-- Alert Box for Messages -->
+                            <label for="oldpassword">Old Password</label>
+                            <input type="password" id="oldpassword" name="oldpassword" placeholder="Enter Old Password" required>
                             
-                            <form>
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Enter Email" required>
-                                
-                                <label for="oldpassword">Old Password</label>
-                                <input type="password" id="oldpassword" name="oldpassword" placeholder="Enter Old Password" required>
-                                
-                                <label for="newpassword">New Password</label>
-                                <input type="password" id="newpassword" name="newpassword" placeholder="Enter New Password" required>
-                                
-                                <label for="confirmpassword">Confirm Password</label>
-                                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
-                                <div id="alertBox" style="display: none; color: red; margin-bottom: 10px;"></div>
-                    
-                                
-                                <button type="submit" class="btn-call">Submit</button>
-                            </form>
-                        </div>
+                            <label for="newpassword">New Password</label>
+                            <input type="password" id="newpassword" name="newpassword" placeholder="Enter New Password" required>
+                            
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+                            
+                            <div id="alertBox" style="display: none; color: red; margin-bottom: 10px;"></div>
+                
+                            <button type="submit" class="btn-call">Submit</button>
+                        </form>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
