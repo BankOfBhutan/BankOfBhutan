@@ -77,7 +77,7 @@ const depositSchema = new mongoose.Schema({
     },
     transferred: { type: Boolean, default: false },
     transferredtodeposit: { type: Boolean, default: false } ,
-    appointment: { type: Boolean, default: false } 
+    // appointment: { type: Boolean, default: false } 
 }, { timestamps: true });
 
 depositSchema.pre('save', function (next) {

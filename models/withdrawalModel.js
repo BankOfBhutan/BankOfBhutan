@@ -59,7 +59,7 @@ const withdrawalSchema = new mongoose.Schema({
     },
     transferredTowithdrawal: { type: Boolean, default: false },
     transferred: { type: Boolean, default: false },
-    appointment: { type: Boolean, default: false } 
+    // appointment: { type: Boolean, default: false } 
 }, { timestamps: true });
 withdrawalSchema.pre('save', function (next) {
     if (this.WithdrawalTime) {

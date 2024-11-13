@@ -80,8 +80,7 @@ const appointmentSchema = new mongoose.Schema({
         default: null,
       },
 });
-
-
+appointmentSchema.index({ accountNumber: 1, serviceName: 1, date: 1 }, { unique: true });
 
 const appointment = mongoose.model('appointment',appointmentSchema)
 module.exports = appointment
