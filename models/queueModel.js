@@ -97,6 +97,6 @@ const queueSchema = new Schema({
     default: false,
   },
 });
-appointmentSchema.index({ accountNumber: 1, serviceName: 1, date: 1 }, { unique: true });
+queueSchema.index({ accountNumber: 1, serviceName: 1, date: 1 }, { unique: true });
 const Queue = mongoose.model('Queue', queueSchema);
 module.exports = Queue;
