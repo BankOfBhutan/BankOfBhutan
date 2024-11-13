@@ -54,6 +54,7 @@ const Teller = require('./routes/authRoutes')
 
 
 const transferController = require('./Controllers/appointmentController');
+const transferToQueue = require('./Controllers/transfertoQueue')
 const transferDeposit = require('./Controllers/transferDepositData')
 const transferWithdrawal = require('./Controllers/transferWithdrawalData')
 
@@ -98,7 +99,7 @@ app.use('/api/v1/display',monitor)
 app.use('/api/teller',Teller)
 
 
-cron.schedule('* * * * *', transferController.automatedTransfer);
+cron.schedule('* * * * *', transferToQueue.automatedTransfer);
 cron.schedule('* * * * *', transferController.automatedTransferToAppointment);
 cron.schedule('* * * * *', transferDeposit.automatedTransfer);
 // cron.schedule('* * * * *', queueController.automatedTransfer);
