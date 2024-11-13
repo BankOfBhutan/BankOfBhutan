@@ -100,7 +100,7 @@ app.use('/api/teller',Teller)
 
 
 cron.schedule('* * * * *', transferToQueue.automatedTransfer);
-cron.schedule('* * * * *', transferController.automatedTransferToAppointment);
+// cron.schedule('* * * * *', transferController.automatedTransferToAppointment);
 cron.schedule('* * * * *', transferDeposit.automatedTransfer);
 // cron.schedule('* * * * *', queueController.automatedTransfer);
 cron.schedule('* * * * *', transferWithdrawal.automatedTransfer);
