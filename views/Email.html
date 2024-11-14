@@ -103,7 +103,7 @@
         const service = getQueryParam('service');
         if (service) {
             localStorage.setItem('selectedService', service);
-            document.getElementById('selectedService').textContent = Selected Service: ${service};
+            document.getElementById('selectedService').textContent = `Selected Service: ${service}`;
         }
 
         document.getElementById('emailForm').addEventListener('submit', async (event) => {
