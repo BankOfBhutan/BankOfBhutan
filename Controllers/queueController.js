@@ -8,6 +8,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config(); // Load environment variables
 const { io } = require('../app'); // Import the Socket.IO instance
 
+
 // Helper to get serviceName and counterNo from either cookies or query params
 const getServiceDetails = (req) => {
   return {
@@ -54,7 +55,6 @@ exports.serveOrFindNextToken = async (req, res) => {
 
     const serviceName = req.query.serviceName;
     const counterNo = req.query.counterNo;
-    const operatorId = req.query.operatorId;
 
     if (!serviceName || !counterNo) {
       return res.status(400).json({ error: 'Service name and counter number are required.' });
@@ -67,12 +67,13 @@ exports.serveOrFindNextToken = async (req, res) => {
     }
 
     // Find and serve the next pending token
-    const pendingToken = await serveNextPendingToken(serviceName, operatorId, counterNo, today, tomorrow);
+    const pendingToken = await serveNextPendingToken(serviceName, counterNo, today, tomorrow);
     if (pendingToken) {
       return res.status(200).json({ message: 'Next token is now serving', token: pendingToken });
     }
 
-    return res.status(404).json({ error: 'No pending token found' });
+    // No pending tokens, return "N/A"
+    return res.status(200).json({ message: 'No pending token available', token: { token: 'N/A' } });
   } catch (error) {
     console.log('An error occurred:', error.message);
     return res.status(500).json({ error: error.message });
@@ -109,7 +110,7 @@ async function checkAndCompleteServingToken(serviceName, counterNo, today, tomor
   return servingToken;
 }
 
-async function serveNextPendingToken(serviceName, operatorId, counterNo, today, tomorrow) {
+async function serveNextPendingToken(serviceName, counterNo, today, tomorrow) {
   const bhutanTime = moment().tz('Asia/Thimphu');
 
   // Step 1: Fetch the teller details based on service and counter
@@ -569,8 +570,13 @@ exports.callSpecificToken = async (req, res) => {
     if (!counterNo) {
       return res.status(400).json({ error: 'Counter number not provided' });
     }
+    const today = moment().tz('Asia/Thimphu').startOf('day').toDate();
+    const tomorrow = moment().tz('Asia/Thimphu').endOf('day').toDate();
+    const specificToken = await Queue.findOne({ 
+      token: tokenNumber,
+      date: { $gte: today, $lte: tomorrow }
 
-    const specificToken = await Queue.findOne({ token: tokenNumber });
+    });
 
     if (!specificToken) {
       return res.status(404).json({ error: 'Token not found' });
@@ -704,9 +710,15 @@ exports.getServingTokensByService = async (req, res) => {
     if (!serviceName) {
       return res.status(400).json({ error: 'Service name is required in the headers' });
     }
-
+    const today = moment().tz('Asia/Thimphu').startOf('day').toDate();
+    const tomorrow = moment().tz('Asia/Thimphu').endOf('day').toDate();
     // Find all tokens with status 'serving' for the specified service
-    const servingTokens = await Queue.find({ status: 'serving', serviceName });
+    const servingTokens = await Queue.find({ 
+      status: 'serving', 
+      serviceName,
+      date: { $gte: today, $lte: tomorrow }
+
+    });
 
     if (!servingTokens.length) {
       return res.status(404).json({ error: `No serving tokens found for the service: ${serviceName}` });
