@@ -1,20 +1,24 @@
 const express = require("express")
 const http = require('http');
 const path = require('path')
-const app = express()
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const socketIo = require('socket.io'); 
+const {Server} = require('socket.io'); 
 const cron = require('node-cron');
 
+const app = express()
 
 const server = http.createServer(app); 
-const io = socketIo(server)
-app.use((req, res, next) => {
-    req.io = io;
-    next();
-  });
+const io = new Server(server);
+
+
+// Middleware setup
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors({ origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE'], allowedHeaders: ['Content-Type', 'Authorization'] }));
+app.use(express.static(path.join(__dirname, 'views')));
+
 
 const viewRoutes = require('./routes/viewRoutes')
 
@@ -72,7 +76,10 @@ const dataRouter = require('./routes/dataRoutes')
 app.use(express.json())
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
 // landing
 app.use('/',viewRoutes)
 
@@ -129,6 +136,14 @@ app.use('/api/queue', queueRoutes)
 
 
 
-app.use(express.static(path.join(__dirname, 'views')))
+// app.use(express.static(path.join(__dirname, 'views')))
+// Socket.IO setup
+io.on('connection', (socket) => {
+  console.log('A user connected:', socket.id);
 
+  // Handle disconnection
+  socket.on('disconnect', () => {
+      console.log('User disconnected:', socket.id);
+  });
+});
 module.exports = app
