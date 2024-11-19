@@ -199,3 +199,34 @@ exports.changePassword = async (req, res) => {
         });
     }
 };
+exports.countActiveTellers = async (req, res) => {
+    try {
+        const service = req.headers['service'];
+
+        if (!service) {
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Service header is required',
+            });
+        }
+
+        const activeTellerCount = await Teller.countDocuments({
+            service: service,
+            status: { $ne: 'leave' }
+        });
+
+        // Emit the active teller count update to all connected clients
+        req.io.emit('activeTellerCountUpdated', { service, activeTellerCount });
+
+        res.status(200).json({
+            status: 'success',
+            activeTellerCount,
+        });
+    } catch (error) {
+        console.error('Error counting active tellers:', error);
+        res.status(500).json({
+            status: 'fail',
+            message: 'Error counting active tellers',
+        });
+    }
+};
