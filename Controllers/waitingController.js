@@ -3,6 +3,7 @@ const Teller = require('../models/userModels');
 const moment = require('moment-timezone'); 
 
 
+
 // Helper function to get the current time in Bhutan Time (UTC+6)
 function getBhutanTime() {
     const utcDate = new Date();
@@ -52,9 +53,9 @@ async function calculateAverageServiceRateByService(serviceName) {
         if (records.length === 0) {
             // No records available, apply random rate based on service type
             if (serviceName === "Cash (Deposit/Withdraw)") {
-                return getRandomServiceRate(5, 15); // 4-7 minutes for Cash
+                return getRandomServiceRate(9, 10); // 4-7 minutes for Cash
             } else if (serviceName === "SWIFT" || serviceName === "RTGS") {
-                return getRandomServiceRate(9, 15); // 7-15 minutes for SWIFT and RTGS
+                return getRandomServiceRate(12, 15); // 7-15 minutes for SWIFT and RTGS
             } else {
                 return 15; // Default for other services
             }
@@ -65,9 +66,9 @@ async function calculateAverageServiceRateByService(serviceName) {
 
             // Check thresholds and return appropriate rate
             if (serviceName === "Cash (Deposit/Withdraw)" && averageServiceRate < 3) {
-                return getRandomServiceRate(5, 15); // Use random rate if below threshold
+                return getRandomServiceRate(9, 10); // Use random rate if below threshold
             } else if ((serviceName === "SWIFT" || serviceName === "RTGS") && averageServiceRate < 7) {
-                return getRandomServiceRate(9, 15); // Use random rate if below threshold
+                return getRandomServiceRate(12, 15); // Use random rate if below threshold
             } else {
                 return averageServiceRate; // Return calculated average if above threshold
             }
@@ -130,7 +131,7 @@ async function calculateEstimatedWaitingTime(serviceName) {
             return { estimatedWaitingTime: totalMinutes }; // Return total minutes until 9 AM plus waiting time
         }
 
-        console.log(numServers, averageServiceTime, serviceRatePerServer, combinedServiceRate, currentQueueLength, waitingTimeHours);
+        // console.log(numServers, averageServiceTime, serviceRatePerServer, combinedServiceRate, currentQueueLength, waitingTimeHours);
 
         // Return the usual waiting time in minutes if it's past 9 am
         return { estimatedWaitingTime: waitingTimeMinutes };
@@ -148,4 +149,6 @@ module.exports = {
     calculateAverageServiceRateByService,
     calculateQueueLengthByService
 };
+
+
 
