@@ -74,7 +74,12 @@ const populateUIWithdraw = (data) => {
     const amountInWords = numberToWords(amount);
     console.log("word amount", amountInWords);
 
-    if (dateElement) dateElement.innerHTML = data1.date;
+ // Populate the elements with data
+    if (dateElement) {
+        const rawDate = data1.date; // Assuming this is the raw date string from the database
+        const formattedDate = new Date(rawDate).toISOString().split('T')[0]; // Format the date to YYYY-MM-DD
+        dateElement.innerHTML = `${formattedDate}`;
+    }  
     if (accountNumberElement) accountNumberElement.innerText = data1.accountNumber;
     if (amountElement) amountElement.innerText = amount;
     if (accountNameElement) accountNameElement.innerText = data1.name;
@@ -244,7 +249,11 @@ const populateUIDeposit = (data) => {
     console.log("Word amount:", amountInWords);
 
     // Populate the elements with data
-    if (dateElement) dateElement.innerHTML = data1.date;
+    if (dateElement) {
+        const rawDate = data1.date; // Assuming this is the raw date string from the database
+        const formattedDate = new Date(rawDate).toISOString().split('T')[0]; // Format the date to YYYY-MM-DD
+        dateElement.innerHTML = `${formattedDate}`;
+    }   
     if (accountNumberElement) accountNumberElement.innerText = data1.accountNumber;
     if (amountElement) amountElement.innerText = amount;
     if (accountNameElement) accountNameElement.innerText = data1.name;
