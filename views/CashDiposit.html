@@ -124,7 +124,7 @@
     <!-- JavaScript to Handle Dynamic Service and Form Submission -->
     <script>
         document.querySelector('.btn-close').addEventListener('click', function () {
-            window.location.href = '/Token.html';
+            window.location.href = '/';
         });
     
         function getQueryParam(param) {
@@ -222,16 +222,22 @@
                 const result = await response.json();
     
                 // Check for success and display the appropriate message
-                if (response.ok) {
-                    successMessage.textContent = 'Cash deposit recorded successfully!';
-                    successMessage.style.display = 'block';
-                    successMessage.style.top = '20px'; 
-                    setTimeout(() => {
-                        successMessage.style.top = '-100px'; 
-                    }, 5000);
-                } else {
-                    showError(result.message || 'Error occurred while recording deposit.');
-                }
+            // Check for success and display the appropriate message
+            if (response.ok) {
+                successMessage.textContent = 'Cash deposit recorded successfully!';
+                successMessage.style.display = 'block';
+                successMessage.style.top = '20px'; 
+
+                // Hide the message after 5 seconds and redirect to home
+                setTimeout(() => {
+                    successMessage.style.top = '-100px';
+                    successMessage.style.display = 'none';
+                    window.location.href = '/Branchwalkinindex.html'; // Redirect to home page
+                }, 5000);
+            } else {
+                showError(result.message || 'Error occurred while recording deposit.');
+            }
+
             } catch (error) {
                 console.error('Error submitting form:', error);
                 showError('Failed to record deposit. Please try again.');
